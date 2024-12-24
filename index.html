@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css"/>
-    <title>Document</title>
+    <title>Custom Slider with Grid</title>
+    <!-- Google Fonts - Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        @import url(css/styles.css);
+    </style>
 </head>
+
 <body>
-    <h1>Hola este es mi proyectos</h1>
+    <!-- Main slider container -->
+    <div class="slider-container">
+        <div class="slider-header">
+            <h2 class="slider-title">Confederaciones</h2>
+            <div class="show-more" onclick="toggleView()">Mostrar más</div>
+        </div>
+        <div class="slider">
+            <div class="slider-track"></div>
+            <div class="slider-nav">
+                <button class="slider-button slider-button-prev">&lt;</button>
+                <button class="slider-button slider-button-next">&gt;</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Grid container for expanded view -->
+    <div class="grid-container"></div>
+
+    <!-- Modal for displaying qualification process -->
+    <div class="modal" id="processModal">
+        <div class="modal-content">
+            <button class="close-button">&times;</button>
+            <h2 id="modalTitle"></h2>
+            <div class="modal-text" id="modalText"></div>
+        </div>
+    </div>
+
+    <script src="scripts/script.js"></script>
 </body>
+
 </html>
