@@ -1,0 +1,63 @@
+body{
+    min-width: 250px;
+}
+
+/*formulario*/
+
+.form-content{
+    background-color: rgb(0, 0, 31);
+    
+}
+
+.form-content h3{
+    color: white; 
+    padding: 15px 0 0 15px;
+    font-size: 22px;
+}
+
+.form-content label{
+    color: white;
+    font-size: 16px;
+    margin-top: 10px; 
+}
+
+.form-content form{
+    padding: 10px 30px;
+}
+
+.btn-danger{
+    width: 120px;
+    margin: auto auto; 
+}
+
+.btn-submit{
+    width: 125px;
+    margin: auto auto; 
+}
+
+textarea{
+    height: 118px;
+}
+
+@media (min-width:600px){
+    .content{
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+    }
+
+    .columnForm{
+        padding: 10px;
+        max-width: 600px;
+    }
+}
+
+@media (min-width: 1100px){
+    .content{
+        display: grid;
+        grid-template-columns: 342px 342px 342px;
+    }
+
+    .btn-submit{
+        margin-left: 455px ;
+    }
+}
