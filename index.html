@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/stylesForm.css"/>
 
-    <!-- Estos estilos pertenecen a Ajesh. Fuente: https://github.com/Kenkarate/phone-number-validation-->
-    <!--<link rel="stylesheet" href="./tools/build(Ajesh)/css/demo.css"/>
+    <!-- Estos estilos pertenecen a Ajesh. Fuente: https://github.com/Kenkarate/phone-number-validation -->
+    <link rel="stylesheet" href="./tools/build(Ajesh)/css/demo.css"/>
     <link rel="stylesheet" href="./tools/build(Ajesh)/css/intlTelInput.css"/>
-        -->
+        
 
     <title>Document</title>
 
@@ -40,22 +40,17 @@
                     <label  class="form-label">Email:</label>
                     <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
 
-                    <label class="form-label">Telefono: </label>
-                    <input type="tel" class="form-control" id="phone" placeholder="+58 000 0000000">
+                    <label class="form-label">Telefono: </label> <br/>
+                    <input type="tel" class="form-control" id="phone" placeholder="phone number" size="32" required>
                 </div>
 
                 <div class="columnForm">
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Mensaje: </label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"
-                        placeholder="Tu opinion es importante!"></textarea>
+                        placeholder="Tu opinion es importante!" required></textarea>
                     </div>
                 </div>
-                
-                
-
-                
-            
             </div>
             <div class="btn-submit">
                 <button type="submit" class="btn btn-danger">Enviar</button>
@@ -65,15 +60,15 @@
 
     <!-- Este codigo fue obtenido del repositorio publico de Ajesh: 
         Fuente: https://github.com/Kenkarate/phone-number-validation  -->
-    <!--<sript src="tools/build(Ajesh)/js/intlTelInput.js"></sript> 
+    <script src="./tools/build(Ajesh)/js/intlTelInput.js"></script> 
     <script>
         var input = document.querySelector('#phone'); 
         window.intlTelInput(input,{}); 
-    </script> -->
+    </script> 
 
 
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Importanción de Bosstrap-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 
