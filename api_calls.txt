@@ -1,0 +1,669 @@
+World Cup Qualifications API
+Version  1.1.0
+Created  2024-10-01
+Updated  2024-11-02
+Content
+Countries  Get countries Get country by ID Leagues  Get leagues Get league by ID Matches  Get matches Get matches by league Get match by ID Standings  Get standings Get standings by league Get standings by country News  Get news Ranking  Get ranking
+Description
+This service is in charge of provide info about the FIFA World Cup 26™ Qualifiers.
+
+Get countries
+Returns the list of countries participating in the qualifiers
+
+Method
+GET  /countries
+Request URL
+https://wc-qualifications-api-production.up.railway.app/api/v1/countries
+JSON Response
+{                                
+    "countries": [
+        {
+            "id": 1,
+            "name": {
+                "en": {
+                    "official": "Grenada",
+                    "common": "Grenada"
+                },
+                "es": {
+                    "official": "Granada",
+                    "common": "Granada"
+                }
+            },
+            "flags": {
+                "png": "https://flagcdn.com/w320/gd.png",
+                "svg": "https://flagcdn.com/gd.svg"
+            },
+            "fifa": "GRN"
+        },
+        ...
+    ]
+}
+Get country by ID
+Returns the detail of a country according to a given country_id
+
+Method
+GET  /countries/{country_id}
+Parameters
+Parameter	Description	Required
+country_id	The country identifier (country ID).	true
+Request URL
+https://wc-qualifications-api-production.up.railway.app/api/v1/countries/{country_id}
+JSON Response
+{                                
+    "country": {
+        "id": 1,
+        "name": {
+            "en": {
+                "official": "Grenada",
+                "common": "Grenada"
+            },
+            "es": {
+                "official": "Granada",
+                "common": "Granada"
+            }
+        },
+        "flags": {
+            "png": "https://flagcdn.com/w320/gd.png",
+            "svg": "https://flagcdn.com/gd.svg"
+        },
+        "fifa": "GRN"
+    }
+}
+Get leagues
+Returns the list of leagues/confederations participating in the qualifiers
+
+Method
+GET  /leagues
+Request URL
+https://wc-qualifications-api-production.up.railway.app/api/v1/leagues
+JSON Response
+{
+    "leagues": [
+        {
+            "id": 1,
+            "name": {
+                "en": "FIFA World Cup 26™ AFC Qualifiers",
+                "es": "Eliminatorias AFC Mundial de la FIFA 26™"
+            },
+            "alias": "AFC",
+            "logo": "https://digitalhub.fifa.com/transform/e12f3909-22cc-437f-bc27-bb8affc04d15/Logo_AFC_lbg",
+            "year": 2026,
+            "qualification_process": {
+                "en": [
+                    "The first round of the AFC qualifying competition for the FIFA World Cup 26 was held in October 2023...",
+                    ...
+                ],
+                "es": [
+                    "La primera ronda de la competición preliminar de la AFC para la Copa Mundial de la FIFA 26 se celebró...",
+                    ...
+                ]
+            }
+        },
+        ...
+    ]
+}
+Get league by ID
+Returns the detail of a league according to a given league_id
+
+Method
+GET  /leagues/{league_id}
+Parameters
+Parameter	Description	Required
+league_id	The league identifier (league ID).	true
+Request URL
+https://wc-qualifications-api-production.up.railway.app/api/v1/leagues/{league_id}
+JSON Response
+{
+    "league": {
+        "id": 1,
+        "name": {
+            "en": "FIFA World Cup 26™ AFC Qualifiers",
+            "es": "Eliminatorias AFC Mundial de la FIFA 26™"
+        },
+        "alias": "AFC",
+        "logo": "https://digitalhub.fifa.com/transform/e12f3909-22cc-437f-bc27-bb8affc04d15/Logo_AFC_lbg",
+        "year": 2026,
+        "qualification_process": {
+            "en": [
+                "The first round of the AFC qualifying competition for the FIFA World Cup 26 was held in October 2023...",
+                ...
+            ],
+            "es": [
+                "La primera ronda de la competición preliminar de la AFC para la Copa Mundial de la FIFA 26 se celebró...",
+                ...
+            ]
+        }
+    }
+}
+Get matches
+Returns the list of matches of the qualifiers
+
+Method
+GET  /matches
+Parameters
+Parameter	Description	Required
+stage	The phase of the qualifiers to which the resource corresponds.
+Accepted values: [0 => "Current", 1 => "1st Round", 2 => "2nd Round", 3 => "3rd Round", 4 => "Group Stage"]	false
+status	The status of the match.
+Accepted value: [0 => "Finished", 1 => "Cancelled", 2 => "Postponed"]	false
+hometeam_id	The home team identifier (home team ID).	false
+awayteam_id	The away team identifier (away team ID).	false
+from	Filter matches from the specified date.
+Example: 2023-10-25	false
+to	Filter matches to the specified date.
+Example: 2023-10-25	false
+Request URL
+https://wc-qualifications-api-production.up.railway.app/api/v1/matches
+JSON Response
+{
+    "matches": [
+        {
+            "id": 270945,
+            "league_id": 4,
+            "date": "2023-09-07",
+            "time": "20:00",
+            "status": "Finished",
+            "round": "1",
+            "referee": "W. Roldán",
+            "stadium": "Estadio Mâs Monumental (Capital Federal, Ciudad de Buenos Aires)",
+            "stage": "Current",
+            "hometeam_id": "102",
+            "awayteam_id": "169",
+            "hometeam_score": "1",
+            "awayteam_score": "0",
+            "hometeam_penalty_score": "",
+            "awayteam_penalty_score": "",
+            "lineups": {
+                "hometeam": {
+                    "system": "4-3-3",
+                    "starting_players": [
+                        {
+                            "player_name": "Emiliano Martínez",
+                            "player_number": 23,
+                            "player_position": 1
+                        },
+                        ...
+                    ],
+                    "substitutes": [
+                        {
+                            "player_name": "Ángel Di María",
+                            "player_number": 11
+                        },
+                        ...
+                    ],
+                    "coach": "L. Scaloni"
+                },
+                "awayteam": {
+                    "system": "5-3-2",
+                    "starting_players": [
+                        {
+                            "player_name": "Hernán Galíndez",
+                            "player_number": 1,
+                            "player_position": 1
+                        },
+                        ...
+                    ],
+                    "substitutes": [
+                        {
+                            "player_name": "Joao Ortíz",
+                            "player_number": 19
+                        },
+                        ...
+                    ],
+                    "coach": "Félix Sánchez"
+                }
+            },
+            "goal_scorers": [
+                {
+                    "time": "78",
+                    "player": "L. Messi",
+                    "team": "home"
+                },
+                ...
+            ],
+            "cards": [
+                {
+                    "time": "61",
+                    "card": "yellow card",
+                    "player": "J. Cifuentes",
+                    "team": "away"
+                },
+                ...
+            ],
+            "substitutions": {
+                "home": [
+                    {
+                        "time": "62",
+                        "in": "N. González",
+                        "out": "Á. Di María"
+                    },
+                    ...
+                ],
+                "away": [
+                    {
+                        "time": "67",
+                        "in": "G. Plata",
+                        "out": "K. Rodríguez"
+                    },
+                    ...
+                ]
+            },
+            "statistics": [
+                {
+                    "type": {
+                        "en": "Shots Total",
+                        "es": "Remates"
+                    },
+                    "home": "13",
+                    "away": "5"
+                },
+                ...
+            ]
+        },
+        ...
+    ]
+}
+Get matches by league ID
+Returns the detail of a league according to a given league_id
+
+Method
+GET  /matches/{league_id}
+Parameters
+Parameter	Description	Required
+league_id	The league identifier (league ID).	true
+stage	The phase of the qualifiers to which the resource corresponds.
+Accepted values: [0 => "Current", 1 => "1st Round", 2 => "2nd Round", 3 => "3rd Round", 4 => "Group Stage"]	false
+status	The status of the match.
+Accepted value: [0 => "Finished", 1 => "Cancelled", 2 => "Postponed"]	false
+hometeam_id	The home team identifier (home team ID).	false
+awayteam_id	The away team identifier (away team ID).	false
+from	Filter matches from the specified date.
+Example: 2023-10-25	false
+to	Filter matches to the specified date.
+Example: 2023-10-25	false
+Request URL
+https://wc-qualifications-api-production.up.railway.app/api/v1/matches/{league_id}
+JSON Response
+{
+    "matches": [
+        {
+            "id": 270945,
+            "league_id": 4,
+            "date": "2023-09-07",
+            "time": "20:00",
+            "status": "Finished",
+            "round": "1",
+            "referee": "W. Roldán",
+            "stadium": "Estadio Mâs Monumental (Capital Federal, Ciudad de Buenos Aires)",
+            "stage": "Current",
+            "hometeam_id": "102",
+            "awayteam_id": "169",
+            "hometeam_score": "1",
+            "awayteam_score": "0",
+            "hometeam_penalty_score": "",
+            "awayteam_penalty_score": "",
+            "lineups": {
+                "hometeam": {
+                    "system": "4-3-3",
+                    "starting_players": [
+                        {
+                            "player_name": "Emiliano Martínez",
+                            "player_number": 23,
+                            "player_position": 1
+                        },
+                        ...
+                    ],
+                    "substitutes": [
+                        {
+                            "player_name": "Ángel Di María",
+                            "player_number": 11
+                        },
+                        ...
+                    ],
+                    "coach": "L. Scaloni"
+                },
+                "awayteam": {
+                    "system": "5-3-2",
+                    "starting_players": [
+                        {
+                            "player_name": "Hernán Galíndez",
+                            "player_number": 1,
+                            "player_position": 1
+                        },
+                        ...
+                    ],
+                    "substitutes": [
+                        {
+                            "player_name": "Joao Ortíz",
+                            "player_number": 19
+                        },
+                        ...
+                    ],
+                    "coach": "Félix Sánchez"
+                }
+            },
+            "goal_scorers": [
+                {
+                    "time": "78",
+                    "player": "L. Messi",
+                    "team": "home"
+                },
+                ...
+            ],
+            "cards": [
+                {
+                    "time": "61",
+                    "card": "yellow card",
+                    "player": "J. Cifuentes",
+                    "team": "away"
+                },
+                ...
+            ],
+            "substitutions": {
+                "home": [
+                    {
+                        "time": "62",
+                        "in": "N. González",
+                        "out": "Á. Di María"
+                    },
+                    ...
+                ],
+                "away": [
+                    {
+                        "time": "67",
+                        "in": "G. Plata",
+                        "out": "K. Rodríguez"
+                    },
+                    ...
+                ]
+            },
+            "statistics": [
+                {
+                    "type": {
+                        "en": "Shots Total",
+                        "es": "Remates"
+                    },
+                    "home": "13",
+                    "away": "5"
+                },
+                ...
+            ]
+        },
+        ...
+    ]
+}
+Get match by ID
+Returns the detail of a league according to a given league_id
+
+Method
+GET  /matches/{league_id}/{match_id}
+Parameters
+Parameter	Description	Required
+league_id	The league identifier (league ID).	true
+match_id	The match identifier (match ID).	true
+stage	The phase of the qualifiers to which the resource corresponds.
+Accepted values: [0 => "Current", 1 => "1st Round", 2 => "2nd Round", 3 => "3rd Round", 4 => "Group Stage"]	false
+status	The status of the match.
+Accepted value: [0 => "Finished", 1 => "Cancelled", 2 => "Postponed"]	false
+hometeam_id	The home team identifier (home team ID).	false
+awayteam_id	The away team identifier (away team ID).	false
+from	Filter matches from the specified date.
+Example: 2023-10-25	false
+to	Filter matches to the specified date.
+Example: 2023-10-25	false
+Request URL
+https://wc-qualifications-api-production.up.railway.app/api/v1/matches/{league_id}/{match_id}
+JSON Response
+{
+    "match": {
+        "id": 270945,
+        "league_id": 4,
+        "date": "2023-09-07",
+        "time": "20:00",
+        "status": "Finished",
+        "round": "1",
+        "referee": "W. Roldán",
+        "stadium": "Estadio Mâs Monumental (Capital Federal, Ciudad de Buenos Aires)",
+        "stage": "Current",
+        "hometeam_id": "102",
+        "awayteam_id": "169",
+        "hometeam_score": "1",
+        "awayteam_score": "0",
+        "hometeam_penalty_score": "",
+        "awayteam_penalty_score": "",
+        "lineups": {
+            "hometeam": {
+                "system": "4-3-3",
+                "starting_players": [
+                    {
+                        "player_name": "Emiliano Martínez",
+                        "player_number": 23,
+                        "player_position": 1
+                    },
+                    ...
+                ],
+                "substitutes": [
+                    {
+                        "player_name": "Ángel Di María",
+                        "player_number": 11
+                    },
+                    ...
+                ],
+                "coach": "L. Scaloni"
+            },
+            "awayteam": {
+                "system": "5-3-2",
+                "starting_players": [
+                    {
+                        "player_name": "Hernán Galíndez",
+                        "player_number": 1,
+                        "player_position": 1
+                    },
+                    ...
+                ],
+                "substitutes": [
+                    {
+                        "player_name": "Joao Ortíz",
+                        "player_number": 19
+                    },
+                    ...
+                ],
+                "coach": "Félix Sánchez"
+            }
+        },
+        "goal_scorers": [
+            {
+                "time": "78",
+                "player": "L. Messi",
+                "team": "home"
+            },
+            ...
+        ],
+        "cards": [
+            {
+                "time": "61",
+                "card": "yellow card",
+                "player": "J. Cifuentes",
+                "team": "away"
+            },
+            ...
+        ],
+        "substitutions": {
+            "home": [
+                {
+                    "time": "62",
+                    "in": "N. González",
+                    "out": "Á. Di María"
+                },
+                ...
+            ],
+            "away": [
+                {
+                    "time": "67",
+                    "in": "G. Plata",
+                    "out": "K. Rodríguez"
+                },
+                ...
+            ]
+        },
+        "statistics": [
+            {
+                "type": {
+                    "en": "Shots Total",
+                    "es": "Remates"
+                },
+                "home": "13",
+                "away": "5"
+            },
+            ...
+        ]
+    }
+}
+Get standings
+Returns the list of standings
+
+Method
+GET  /standings
+Request URL
+https://wc-qualifications-api-production.up.railway.app/api/v1/standings
+JSON Response
+{
+    "standings": [
+        {
+            "country_id": 102,
+            "league_id": 4,
+            "actual_pos": 1,
+            "prev_pos": 1,
+            "matches_played": 8,
+            "wins": 6,
+            "loss": 2,
+            "draws": 0,
+            "goals_scored": 12,
+            "goals_against": 4,
+            "goal_difference": 8,
+            "points": 18,
+            "group": "A",
+            "stage": "Current"
+        },
+        ...
+    ]
+}
+Get standings by league ID
+Returns the list of standings according to a given league_id
+
+Method
+GET  /standings/{league_id}
+Parameters
+Parameter	Description	Required
+league_id	The league identifier (league ID).	true
+stage	The phase of the qualifiers to which the resource corresponds.
+Accepted values: [0 => "Current", 1 => "1st Round", 2 => "2nd Round", 3 => "3rd Round", 4 => "Group Stage"]	true
+Request URL
+https://wc-qualifications-api-production.up.railway.app/api/v1/standings/{league_id}
+JSON Response
+{
+    "standings": [
+        {
+            "country_id": 102,
+            "league_id": 4,
+            "actual_pos": 1,
+            "prev_pos": 1,
+            "matches_played": 8,
+            "wins": 6,
+            "loss": 2,
+            "draws": 0,
+            "goals_scored": 12,
+            "goals_against": 4,
+            "goal_difference": 8,
+            "points": 18,
+            "group": "A",
+            "stage": "Current"
+        },
+        ...
+    ]
+}
+Get standings by country ID
+Returns the list of standings according to a given league_id and country_id
+
+Method
+GET  /standings/{league_id}/{country_id}
+Parameters
+Parameter	Description	Required
+league_id	The league identifier (league ID).	true
+country_id	The country identifier (country ID).	true
+stage	The phase of the qualifiers to which the resource corresponds.
+Accepted values: [0 => "Current", 1 => "1st Round", 2 => "2nd Round", 3 => "3rd Round", 4 => "Group Stage"]	false
+Request URL
+https://wc-qualifications-api-production.up.railway.app/api/v1/standings/{league_id}/{country_id}
+JSON Response
+{
+    "standings": [
+        {
+            "country_id": 102,
+            "league_id": 4,
+            "actual_pos": 1,
+            "prev_pos": 1,
+            "matches_played": 8,
+            "wins": 6,
+            "loss": 2,
+            "draws": 0,
+            "goals_scored": 12,
+            "goals_against": 4,
+            "goal_difference": 8,
+            "points": 18,
+            "group": "A",
+            "stage": "Current"
+        },
+        ...
+    ]
+}
+Get news
+Returns the list of news
+
+Method
+GET  /news
+Request URL
+https://wc-qualifications-api-production.up.railway.app/api/v1/news
+JSON Response
+{
+    "news": [
+        {
+            "url": {
+                "en": "https://www.fifa.com/en/articles/kenan-yildiz-interview-turkiye-juventus",
+                "es": "https://www.fifa.com/es/articles/kenan-yildiz-entrevista-turquia-juventus"
+            },
+            "image": "https://digitalhub.fifa.com/transform/f1700579-c75b-4236-bdba-73cfcb659632/2157499729",
+            "title": {
+                "en": "Yildiz on rapid rise, Juve breakthrough and Türkiye's new era",
+                "es": "El ascenso vertiginoso de Kenan Yildiz, su actuación con la Juve y el resurgir de Turquía"
+            },
+            "preview_text": {
+                "en": "Teenage forward Kenan Yildiz opens up on desire to bring Türkiye back to the World Cup and relishing the pressure of wearing the Juventus No10 shirt.",
+                "es": "El joven delantero Kenan Yildiz comparte su deseo de llevar a Turquía de regreso a la Copa Mundial y nos cuenta sobre el reto fascinante de vestir la camiseta número 10 de la Juventus."
+            },
+            "date": "2024-10-25"
+        },
+        ...
+    ]
+}
+Get ranking
+Returns the last male world classification
+
+Method
+GET  /ranking
+Request URL
+https://wc-qualifications-api-production.up.railway.app/api/v1/ranking
+JSON Response
+{
+    "ranking": [
+        {
+            "country_id": 102,
+            "rank": 1,
+            "previous_rank": 1,
+            "points": 1883.5,
+            "previous_points": 1889.02,
+            "league_id": 4
+        },
+        ...
+    ]
+}

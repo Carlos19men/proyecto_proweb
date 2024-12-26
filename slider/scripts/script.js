@@ -1,4 +1,3 @@
-
 (() => {
     /**
      * Configuration object for slider settings
@@ -18,11 +17,7 @@
         prevBtn: document.querySelector('.slider-button-prev'),
         nextBtn: document.querySelector('.slider-button-next'),
         showMoreBtn: document.querySelector('.show-more'),
-        slider: document.querySelector('.slider'),
-        modal: document.getElementById('processModal'),
-        modalTitle: document.getElementById('modalTitle'),
-        modalText: document.getElementById('modalText'),
-        closeButton: document.querySelector('.close-button')
+        slider: document.querySelector('.slider')
     };
 
     /**
@@ -62,20 +57,11 @@
     };
 
     /**
-     * Shows the modal with league information
-     * @param {Object} league - The league object containing information to display
+     * Navigates to league page with the specific league ID
+     * @param {Object} league - The league object containing information
      */
-    const showModal = (league) => {
-        elements.modalTitle.textContent = league.alias;
-        elements.modalText.textContent = league.qualification_process.es;
-        elements.modal.style.display = 'flex';
-    };
-
-    /**
-     * Closes the modal
-     */
-    const closeModal = () => {
-        elements.modal.style.display = 'none';
+    const navigateToLeague = (league) => {
+        window.location.href = `../league/index.html?id=${league.id}`;
     };
 
     /**
@@ -92,7 +78,7 @@
         img.src = league.logo;
         img.alt = league.alias;
         img.loading = 'lazy';
-        img.addEventListener('click', () => showModal(league));
+        img.addEventListener('click', () => navigateToLeague(league));
 
         const title = document.createElement('div');
         title.className = isGrid ? 'grid-title' : 'slider-alias';
@@ -160,13 +146,6 @@
             // Add event listeners
             elements.prevBtn.addEventListener('click', handlePrevClick);
             elements.nextBtn.addEventListener('click', handleNextClick);
-            elements.closeButton.addEventListener('click', closeModal);
-            elements.modal.addEventListener('click', (e) => {
-                if (e.target === elements.modal) closeModal();
-            });
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') closeModal();
-            });
 
         } catch (error) {
             console.error('Error loading data:', error);

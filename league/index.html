@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONMEBOL Qualifiers</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <nav class="navigation">
+        <button class="back-button" onclick="goBack()">← Regresar</button>
+    </nav>
+
+    <main class="container">
+        <section class="league-info" id="league-info">
+            <img id="league-logo" src="" alt="League Logo" class="league-logo">
+            <h1 id="league-alias" class="league-alias"></h1>
+            <p id="qualification-process" class="qualification-process"></p>
+        </section>
+
+        <section class="filters">
+            <div class="filter-section">
+                <select id="stage-filter" class="form-select">
+                    <option value="">All Stages</option>
+                    <option value="0">Current</option>
+                    <option value="1">1st Round</option>
+                    <option value="2">2nd Round</option>
+                    <option value="3">3rd Round</option>
+                    <option value="4">Group Stage</option>
+                </select>
+
+                <select id="status-filter" class="filter-input">
+                    <option value="">All Status</option>
+                    <option value="0">Finished</option>
+                    <option value="1">Cancelled</option>
+                    <option value="2">Postponed</option>
+                </select>
+
+                <input type="date" id="from-date" class="filter-input" placeholder="From Date">
+                <input type="date" id="to-date" class="filter-input" placeholder="To Date">
+            </div>
+
+            <div id="filter-warning" class="filter-warning" hidden>
+                Note: Some filter combinations might not be supported by the API
+            </div>
+        </section>
+
+        <section class="matches-section">
+            <div id="matches-list" class="matches-list"></div>
+
+            <div class="pagination-container">
+                <div id="pagination-info" class="pagination-info"></div>
+                <div class="pagination">
+                    <button id="prev-page" class="pagination-button">Previous</button>
+                    <button id="next-page" class="pagination-button">Next</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <template id="match-template">
+        <article class="match-item">
+            <div class="match-info">
+                <time class="match-date"></time>
+                <div class="match-stage"></div>
+                <div class="match-stadium"></div>
+                <div class="match-referee"></div>
+                <div class="match-status"></div>
+            </div>
+            <div class="teams-container">
+                <div class="team home-team">
+                    <img class="team-flag" alt="">
+                    <span class="team-name"></span>
+                    <span class="score"></span>
+                </div>
+                <div class="vs">VS</div>
+                <div class="team away-team">
+                    <img class="team-flag" alt="">
+                    <span class="team-name"></span>
+                    <span class="score"></span>
+                </div>
+            </div>
+            <div class="match-cards"></div>
+        </article>
+    </template>
+
+    <script src="scripts/app.js" type="module"></script>
+</body>
+
+</html>
