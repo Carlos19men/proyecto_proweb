@@ -16,8 +16,8 @@ const data = [
     },
     {
         "name": "Carlos Alberto Arévalo Gómez",
-        "photo":"",
-        "description":"falta su biografia"
+        "photo":"img/images.png",
+        "description":"Ninguna."
     }
 ]
 
