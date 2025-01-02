@@ -1,76 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/stylesForm.css"/>
+    <title>Partido FIFA</title>
 
-    <!-- Estos estilos pertenecen a Ajesh. Fuente: https://github.com/Kenkarate/phone-number-validation -->
-    <link rel="stylesheet" href="./tools/build(Ajesh)/css/demo.css"/>
-    <link rel="stylesheet" href="./tools/build(Ajesh)/css/intlTelInput.css"/>
-        
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"  
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="  
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    
 </head>
 <body>
-
-    <a href="pages/about_us/about.html">
-        about us
-    </a>
+    <header>
+        <nav class="navbar navbar-expand-lg" style="background-color: #000;">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand text-white logo fs-2" href="#">FIFA</a>
+                
+                <!-- Botón de menú para móviles -->
+                <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
     
-    <div class="form-content">
-
-        <h3>CONTÁCTANOS</h3>
-        <form>
-            <div class="mb-3 content">
-
-                <div class="columnForm">
-                    <label  class="form-label">Nombre:</label>
-                    <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre"/>
-
-                    <label class="form-label">Apellido: </label>
-                    <input type="text" class="form-control" id="lastname" placeholder="Ingresa tu apellido">
-                </div>
-
-                <div class="columnForm">
-                    <label  class="form-label">Email:</label>
-                    <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
-
-                    <label class="form-label">Telefono: </label> <br/>
-                    <input type="tel" class="form-control" id="phone" placeholder="número de telefono" size="32" required>
-                </div>
-
-                <div class="columnForm">
-                    <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Mensaje: </label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"
-                        placeholder="Tu opinion es importante!" required></textarea>
+                <!-- Enlaces y íconos -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <!-- Enlaces de navegación -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-white active" aria-current="page" href="#">AFC</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">CAF</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">CONCACAF</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">CONMEBOL</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">OFC</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">UEFA</a>
+                        </li>
+                    </ul>
+    
+                    <!-- Íconos -->
+                    <div class="d-flex">
+                        <a href="#" class="text-white me-3"><i class="fas fa-search"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fas fa-globe"></i></a>
+                        <a href="#" class="text-white"><i class="fas fa-user-circle"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="btn-submit">
-                <button type="submit" class="btn btn-danger">Enviar</button>
-            </div>
-        </form>
+        </nav>
+    </header>
+    
+    <main class="contenedor-principal py-4">
+        <div class="container">
+                <!-- Aquí se cargarán los partidos -->
+                <div id="partidos-container">
+        </div>
+    
+    <!-- Contenedor de los títulos -->
+    <div class="row justify-content-between titulos-secciones">
+        <div class="col-6 text-left">
+            <h3 class="h5 titulo titulo-estadisticas clicked" data-target="estadisticas">ESTADÍSTICAS</h3>
+        </div>
+        <div class="col-6 text-right">
+            <h3 class="h5 titulo titulo-alineaciones" data-target="alineaciones">ALINEACIONES</h3>
+        </div>
     </div>
 
-    <!-- Este codigo fue obtenido del repositorio publico de Ajesh: 
-        Fuente: https://github.com/Kenkarate/phone-number-validation  -->
-    <script src="./tools/build(Ajesh)/js/intlTelInput.js"></script> 
-    <script>
-        var input = document.querySelector('#phone'); 
-        window.intlTelInput(input,{}); 
-    </script> 
+<div class="row detalles">
+    <div class="col-md-12">
+        <section class="estadisticas contenido" id="estadisticas" style="display: block;">
+            <!-- Aquí se cargarán las estadísticas -->
+        </section>
+        
+        <!-- Alineaciones -->
+        <section class="alineaciones contenido" id="alineaciones" style="display: none;">
+            <!-- Aquí se cargarán las alineaciones -->
+        </section>
+        
+        <!-- Sección Suplentes -->
+        <div class="seccion-suplentes" id="suplentes" style="display: none;">
+            <!-- Aquí se cargarán los suplentes -->
+        </div>      
+        
+        <!-- Sección Director Técnico -->
+        <section class="directores-tecnicos" id="directores-tecnicos" style="display: none;">
+            <!-- Aquí se cargarán los directores técnicos -->
+        </section>
+    </div>
 
+    <div class="nombre-lugar" id="nombre-lugar">
+        <!-- Aquí se cargarán los nombres de los estadios -->
+    </div>
+</div>
+            
+    </main>
+    
+    <!-- FOOTER --> 
+    <footer class="p-2"> 
+        <div class="primera-parte row align-items-center text-center container mx-auto"> 
+          <div class="logo text-white col fs-3">FIFA</div> 
+          <div class="redes-sociales col"> 
+            <a href="https://twitter.com/FIFAcom"><i class="fs-3 text-white fa-brands fa-x-twitter">&nbsp;&nbsp;&nbsp;</i></a> 
+            <a href="https://www.facebook.com/fifa"><i class="fs-3 text-white fa-brands fa-facebook-f">&nbsp;&nbsp;&nbsp;</i></a> 
+            <a href="https://www.instagram.com/fifaworldcup"><i class="fs-3 text-white fa-brands fa-instagram">&nbsp;&nbsp;&nbsp;</i></a> 
+            <a href="https://www.youtube.com/FIFATV"><i class="fs-3 text-white fa-brands fa-youtube">&nbsp;&nbsp;&nbsp;</i></a> 
+            <a href="https://www.tiktok.com/@fifaworldcup"><i class="fs-3 text-white fa-brands fa-tiktok">&nbsp;&nbsp;</i></a> 
+          </div> 
+          <p class="text-white fw-bold mt-2 col">Descárgate ya la FIFA App para disfrutar de más contenidos</p> 
+          <div class="descargar col d-flex"> 
+            <a href="https://play.google.com/store/apps/details?id=com.fifa.fifaapp.android&hl=en"><img class="android" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' /></a> 
+            <a href="https://apps.apple.com/us/app/fifa-official-app/id756904853" class="mt-2"><img class="apple" src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276560000&h=7e7b68fad19738b5649a1bfb78ff46e9" alt="Download on the App Store"></a> 
+          </div> 
+        </div> 
+        <div class="linea w-100"></div> 
+        <div class="segunda-parte mt-3"> 
+          <div class="row container fw-bold mx-auto"> 
+            <a href="https://www.fifa.com/data-protection-portal/data-protection-policy" class="col text-end text-white text-decoration-none"><p>POLÍTICAS DE PRIVACIDAD</p></a> 
+            <a href="https://www.fifa.com/terms-of-service" class="col text-decoration-none text-white"><p>TÉRMINOS Y SERVICIOS</p></a> 
+          </div> 
+          <p class="text-white fw-bold text-center">Copyright © 1994 - 2024 FIFA. Todos los derechos reservados.</p> 
+        </div> 
+       </footer>
 
-
-    <!-- Importanción de Bosstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="functions.js"></script>
 </body>
 </html>
