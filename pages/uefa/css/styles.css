@@ -8,7 +8,7 @@
 }
 
 .cardUefa{
-    margin: auto;
+    margin: auto auto;
 }
 
 .card-title{
@@ -28,4 +28,14 @@ span{
 
 .foto{
     object-fit: contain;
+    margin: auto auto;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 25px;
+}
+
+.capa{
+    padding: none; 
+    margin: none; 
+    background-color: rgba(0, 0, 0, 0.369);
 }
