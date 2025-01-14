@@ -1,0 +1,714 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* GENERAL */
+:root{
+    --ff-logo:"Montserrat", sans-serif;
+    --ff-parrafo: "Roboto", sans-serif;
+    --ff-subtitulos:"Lato", sans-serif;
+}
+
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    background-color: #f8f9fa;
+}
+
+p{
+    font-family: var(--ff-parrafo);
+}
+
+h5{
+    font-family: var(--ff-subtitulos);
+}
+
+.subtitulos{
+    font-family: var(--ff-subtitulos);
+    font-weight: 900;
+}
+
+.text-warning {
+    font-size: 1.2rem;
+    color: #e0a800;
+}
+
+.text-danger {
+    font-size: 1.2rem;
+    color: #dc3545;
+}
+
+.mostrar-todo a{
+    color: #525151;
+}
+
+.mostrar-todo a:hover{
+    color: #232323;
+}
+
+.mostrar-todo{
+    margin-right: -50px;
+}
+
+.card {
+    transition: transform 0.5s ease;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
+    overflow: hidden; 
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-body {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center; 
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* NAVBAR */
+header {
+    background-color: #000;
+    padding: 10px 0;;
+}
+
+header .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-family: var(--ff-subtitulos);
+    font-weight: 900;
+}
+
+header .navbar .navbar-brand{
+    font-family: var(--ff-logo);
+    font-weight: 800;
+    margin-left: 150px; 
+    padding-left: 20px;
+}
+
+header .navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+header .navbar a:hover {
+    color: #f8f9fa;
+}
+
+.navbar .nav-item .nav-link.active {
+    color: #e63946; 
+}
+
+header .navbar .navbar-nav {
+    margin-left: auto;
+}
+
+header .navbar .navbar-nav .nav-item {
+    margin-left: 10px; 
+}
+
+header .iconos {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px; 
+}
+
+header .iconos i {
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+header .iconos i:hover {
+    color: #e63946; 
+    transform: scale(1.1); 
+}
+
+.navbar .nav-link:hover,
+.navbar .fas:hover {
+    color: #e63946;
+    transition: color 0.3s ease;
+}
+
+.navbar .fas { 
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* BANNER CARRUSEL LO QUE SEA */
+.carousel-item {
+    position: relative;
+    height: 90vh; 
+}
+
+.carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%; 
+}
+
+.overlay {
+    position: absolute; 
+    bottom: 0;
+    left: 0;
+    width: 100%; 
+    height: 30%;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+/* ODS */
+.info-ods {
+    background-color: #204067;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+    padding: 20px;
+    width: 100%; 
+    height: 100%; 
+}
+  
+.ods-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; 
+}
+
+.ods-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+  
+.ods-description {
+    font-size: 1rem;
+}
+
+.ods-button {
+    background-color: #d32f2f; 
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+}
+  
+.ods-button:hover {
+    background-color: #b71c1c; 
+}    
+
+/* ULTIMAS NOVEDADES */
+#noticias {
+    display: grid;
+    grid-template-columns: 3fr 2fr; 
+    gap: 20px;
+}
+
+#noticia-principal{
+    height: 100%;
+}
+
+.card-img-top {
+    height: 480px;
+    object-fit: cover;
+}
+
+#noticias-secundarias .card{
+    height: 300px;
+}
+
+#noticias-secundarias p{
+    font-size: 10px;
+    text-align: justify;
+}
+
+/* PPROXIMOS PARTIDOS */
+#proximos-partidos {
+    background: linear-gradient(135deg, #f8f9fa, #5C7EA6);
+
+}
+
+#proximos-partidos .cuadro-partidos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    gap: 20px; 
+    padding: 10px 0; 
+}
+
+#proximos-partidos .card{
+    position: relative;
+    transition: transform 0.3s ease, opacity 0.5s ease;
+
+}
+
+#proximos-partidos .card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #FFCC00;
+    transition: 0.3s ease;
+}
+
+#proximos-partidos .card:hover::after {
+    width: 100%; 
+}
+
+#proximos-partidos .card.saliendo {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.flag-img {
+    width: 32px;
+    height: 24px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* CONFEDERACIONES */
+.flecha {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.flecha.izquierda {
+    margin-right: 10px;
+}
+
+.flecha.derecha {
+    margin-left: 10px;
+}
+
+/* FORMULARIO */
+
+.contacto{
+    background-color: #031030;
+    
+}
+
+label{
+    color: white;
+    font-size: 16px;
+    margin-top: 10px; 
+    font-family: Lato,sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.formulario {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.btn-danger{
+    width: 120px;
+    margin: auto auto; 
+}
+
+.btn-submit{
+    width: 125px;
+    margin: auto auto; 
+}
+
+textarea{
+    height: 118px;
+}
+
+/* FOOTER */
+footer{
+    background-color: #000;
+}
+
+footer .logo{
+    font-family: var(--ff-logo); 
+    font-weight: 800; 
+}
+
+.linea{
+    border-bottom:solid 1px #fff;
+}
+
+.android {
+    width: 150px;
+}
+
+.apple {
+    width: 164px;
+    height: 40px;
+}
+
+@media (max-width: 1256px) {
+    #banner{
+        flex-direction: column-reverse;
+    }
+
+    .ODS , .carrusel{
+        width: 100% !important;
+    }
+
+    .ODS{
+        height: 500px;
+    }
+}
+
+@media (max-width: 900px){
+
+    #noticias {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+
+    #noticia-principal {
+        grid-column: span 1; /* Asegura que la noticia principal ocupe todo el ancho disponible */
+    }
+
+    #noticias-secundarias .card {
+        height: auto; /* Ajusta la altura de las tarjetas secundarias */
+    }
+
+    #noticias-secundarias {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Dos noticias por fila */
+        gap: 10px;
+    }
+
+    #noticias-secundarias .col-md-6 {
+        width: 100%; /* Asegura que las noticias secundarias se ajusten a la columna */
+    }
+
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 460px) {   
+
+    footer .redes-sociales i{
+        font-size: 0.7rem !important;
+    }
+
+    .descargar img {
+        position: relative;
+        top: 9px;
+        
+    }
+
+    footer .android{
+        width: 75px !important;
+    }
+
+    footer .apple{
+        top: -4.5px !important;
+        width: 60px !important;      
+    }
+
+    .copyright{
+        font-size: 0.6rem !important;
+    }
+}
+
+@media (min-width:750px){
+    .content{
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+    }
+
+    .columnForm{
+        padding: 10px;
+        max-width: 600px;
+    }
+}
+
+@media (min-width: 1100px){
+    .content{
+        display: grid;
+        grid-template-columns: 342px 342px 342px;
+    }
+
+    .btn-submit{
+        margin-left: 455px ;
+    }
+}
+
+/* Tablet Styles (768px) */
+@media (max-width: 768px) {
+    /* Navbar */
+    header .navbar .navbar-nav .nav-item {
+        margin-left: 15px; 
+    }
+
+    .logo {
+        font-size: 2rem; 
+    }
+
+    .subtitulos{
+        margin-top: 10px;
+        font-size: 1.5rem !important;
+    }
+
+    .carousel-item {
+        height: 80vh; 
+    }
+
+    .overlay {
+        height: 35%; 
+    }
+
+    /* PROXIMOS PARTIDOS */
+    #proximos-partidos .cuadro-partidos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-img-top {
+        height: auto;
+        object-fit: contain;
+    }
+
+    #lista-confederaciones .flecha {
+        font-size: 0.9rem !important;
+        padding: 4px 8px;
+        position: relative;
+        right: 40px;
+        margin-left: 40px;
+    }
+
+    #lista-confederaciones .d-flex.gap-3 {
+        gap: 0.5rem; /* Reduce el espacio entre tarjetas y flechas */
+    }
+
+    .primera-parte .logo{
+        display: none; /* Oculta el logo en tabletas y resoluciones menores */
+    }
+    
+     /* Ocultar texto de descarga en móviles */
+    .primera-parte p {
+    display: none;
+    }
+    
+    /* Ocultar enlaces de políticas y términos */
+    .segunda-parte .row a {
+    display: none;
+    }
+    
+    /* Ajustar tamaño de elementos */
+    .primera-parte .logo {
+    font-size: 1.2rem; /* Reducir logo */
+    }
+    
+  
+    .redes-sociales {
+    margin-bottom: 15px;
+    }
+    
+    .descargar {
+    justify-content: center;
+    flex-wrap: wrap;
+    }
+    
+    .descargar img {
+    width: 100px;
+    }
+
+    .android { 
+        width: 100px !important; 
+    } 
+    
+    .apple{
+        position: relative;
+        bottom: 9px;
+        width: 80px !important;
+    }
+    
+    .redes-sociales i {
+        font-size: 1rem !important; /* Reducir iconos aún más */
+    }
+}
+
+@media (max-width: 510px){
+    #proximos-partidos .card{
+        width: 110%;
+    }
+}
+
+@media (max-width: 630px){
+
+    #lista-confederaciones .card {
+        width: 400px !important;
+    }
+
+    #lista-confederaciones .flecha {
+        font-size: 0.9rem !important;
+        padding: 4px 8px;
+        position: relative;
+        right: 40px;
+        margin-left: 40px;
+    }
+
+    #lista-confederaciones .d-flex.gap-3 {
+        gap: 0.5rem; /* Reduce el espacio entre tarjetas y flechas */
+    }
+
+}
+
+@media (max-width: 500px){
+
+    .mostrar-todo{
+        font-size: 0.8rem !important;
+    }
+
+     /* PROXIMOS PARTIDOS */
+     #proximos-partidos .cuadro-partidos {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #lista-confederaciones .card {
+        height: 200px;
+        width: 300px !important;
+    }
+
+    #lista-confederaciones .flecha {
+        position: relative;
+        right: 40px;
+        margin-left: 40px;
+    }
+
+    #lista-confederaciones .d-flex.gap-3 {
+        gap: 0.1rem !important; /* Reduce el espacio entre tarjetas y flechas */
+    }
+
+}
+
+/* Tablet Styles (412px) */
+@media (max-width: 412px) {
+
+    .subtitulos{
+        font-size: 1.1rem !important;
+    }
+
+    /* PROXIMOS PARTIDOS */
+    #proximos-partidos .cuadro-partidos {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #noticias{
+        overflow-x: hidden;
+    }
+
+    #noticias{
+        padding: 0.1rem !important;
+    }
+
+    #noticias .card{
+        width: 97%;
+    }
+
+    #noticias-secundarias .card-title{
+        font-size: 15px !important;
+    }
+
+    #lista-confederaciones .card {
+        height: 140px;
+        width: 240px !important;
+    }
+
+    #lista-confederaciones .flecha {
+        right: 20px;
+        margin-left: 40px;
+    }
+
+    #noticias-secundarias {
+        grid-template-columns: 1fr; /* Dos noticias por fila */
+    }
+    
+}
+
+/* Very small screens (mobile devices) */
+@media (max-width: 576px) {
+
+    .primera-parte .logo {
+        font-size: 1rem;
+    }
+  
+    .redes-sociales i {
+        font-size: 1rem;
+        margin-right: 5px;
+    }
+  
+    .descargar img {
+        width: 90px;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .primera-parte {
+        flex-wrap: wrap;
+    }
+
+    .primera-parte .logo {
+        margin-bottom: 15px;
+    }
+    
+    .redes-sociales {
+        margin-bottom: 15px;
+    }
+    
+    .descargar {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .descargar img {
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 10px;
+    }
+    
+    .primera-parte p {
+        text-align: center;
+    }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+        <!-- REVISAR -->
+        <header>
+            <nav class="navbar navbar-expand-lg" style="background-color: #000;">
+                <div class="container-fluid">
+                    <!-- Logo -->
+                    <a class="navbar-brand text-white logo fs-2" href="../../index.html">FIFA</a>
+                    <!-- Botón de menú para móviles -->
+                    <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- Enlaces y íconos -->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <!-- Enlaces de navegación -->
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                              <a class="nav-link text-white" href="../page_todasNoticias/index.html">NOVEDADES</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link text-white active" aria-current="page" href="../page_todosProximosPart/index.html">ELIMINATORIAS </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="../page_confederaciones/index.html">CONFEDERACIONES</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link text-white" href="../page_ranking/index.html">RANKING</a>
+                            </li>
+                        </ul>
+                        <!-- Íconos -->
+                        <div class="d-flex">
+                            <a href="#" class="text-white me-3" onclick="redirectToAboutUs()">
+                              <i class="fas fa-globe"></i>
+                            </a>                      
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+    <!-- PARTIDOS -->
+     <div class="todos-partidos p-5">
+        <h1 class="subtitulos">PRÓXIMOS PARTIDOS</h1>
+        <div id="principales"></div>
+        <h3 class="subtitulos mt-4 ">MÁS PARTIDOS</h3>
+        <div id="todos"></div>
+     </div>
+
+     <!-- FOOTER -->
+     <footer class="p-2">
+      <div class="primera-parte row align-items-center text-center container">
+        <div class="logo text-white col fs-3">FIFA</div>
+        <div class="redes-sociales col">
+          <a href="https://twitter.com/FIFAcom"><i class="fs-3 text-white fa-brands fa-x-twitter">&nbsp;&nbsp;&nbsp;</i></a>
+          <a href="https://www.facebook.com/fifa"><i class="fs-3 text-white fa-brands fa-facebook-f">&nbsp;&nbsp;&nbsp;</i></a>
+          <a href="https://www.instagram.com/fifaworldcup"><i class="fs-3 text-white fa-brands fa-instagram">&nbsp;&nbsp;&nbsp;</i></a>
+          <a href="https://www.youtube.com/FIFATV"><i class="fs-3 text-white fa-brands fa-youtube">&nbsp;&nbsp;&nbsp;</i></a>
+          <a href="https://www.tiktok.com/@fifaworldcup"><i class="fs-3 text-white fa-brands fa-tiktok">&nbsp;&nbsp;</i></a>
+        </div>
+        <p class="text-white fw-bold mt-2 col">Descárgate ya la FIFA App para disfrutar de más contenidos</p>
+        <div class="descargar col d-flex">
+          <a href="https://play.google.com/store/apps/details?id=com.fifa.fifaapp.android&hl=en"><img class="android" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' /></a>
+          <a href="https://apps.apple.com/us/app/fifa-official-app/id756904853" class="mt-2"><img class="apple" src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276560000&h=7e7b68fad19738b5649a1bfb78ff46e9" alt="Download on the App Store"></a>
+        </div>
+      </div>
+      <div class="linea w-100"></div>
+      <div class="segunda-parte mt-3">
+        <div class="row container fw-bold mx-auto">
+          <a href="https://www.fifa.com/data-protection-portal/data-protection-policy" class="col text-end text-white text-decoration-none"><p>POLÍTICAS DE PRIVACIDAD</p></a>
+          <a href="https://www.fifa.com/terms-of-service" class="col text-decoration-none text-white"><p>TÉRMINOS Y SERVICIOS</p></a>
+        </div>
+        <p class="text-white fw-bold text-center">Copyright © 1994 - 2024 FIFA. Todos los derechos reservados.</p>
+      </div>
+     </footer>
+     
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" 
+        crossorigin="anonymous"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" 
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" 
+        crossorigin="anonymous"></script> 
+    <script src="js/index.js"></script> 
+
+</body>
+</html>

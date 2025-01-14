@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* GENERAL */
+:root{
+    --ff-logo:"Montserrat", sans-serif;
+    --ff-parrafo: "Roboto", sans-serif;
+    --ff-subtitulos:"Lato", sans-serif;
+}
+
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    background-color: #f8f9fa;
+}
+
+p{
+    font-family: var(--ff-parrafo);
+}
+
+.subtitulos{
+    font-family: var(--ff-subtitulos);
+    font-weight: 900;
+}
+
+.text-warning {
+    font-size: 1.2rem;
+    color: #e0a800;
+}
+
+.text-danger {
+    font-size: 1.2rem;
+    color: #dc3545;
+}
+
+.card {
+    transition: transform 0.5s ease;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    overflow: hidden; 
+    width: 100%; /* Hace que la carta ocupe todo el espacio disponible */
+    height: 100%; /* Ajusta el alto de la carta al contenedor */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-body {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+.banderas {
+    width: 100%; /* Hace que el contenedor de las banderas ocupe el 100% del ancho de la carta */
+    display: flex;
+    justify-content: space-around; /* Espacio entre las imágenes */
+    align-items: center;
+    margin-bottom: 10px; /* Ajuste para la separación de las banderas */
+}
+
+.flag-img {
+    width: 40%; /* Hace que las banderas ocupen el 40% del ancho de su contenedor */
+    height: auto; /* Mantiene la proporción de las imágenes */
+    object-fit: cover; /* Asegura que la imagen se recorte para llenar el área sin distorsionarse */
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+#principales .card{
+    height: 300px;
+    width: 450px;
+}
+
+#principales .banderas{
+    margin-bottom: 30px;
+}
+
+#principales .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#principales .card-text{
+    font-size: 1.1rem;
+}
+
+.row.g-3 {
+    margin-bottom: 15px; /* Ajusta este valor para reducir o aumentar el espacio entre filas */
+}
+
+.col-md-4 {
+    display: flex;
+    justify-content: center;  
+}
+
+/* NAVBAR */
+header {
+    background-color: #000;
+    padding: 10px 0;
+}
+
+header .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-family: var(--ff-subtitulos);
+    font-weight: 900;
+}
+
+header .navbar .navbar-brand {
+    font-family: var(--ff-logo);
+    font-weight: 800;
+    margin-left: 150px; 
+    padding-left: 20px;
+}
+
+header .navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+header .navbar a:hover {
+    color: #f8f9fa;
+}
+
+.navbar .nav-item .nav-link.active {
+    color: #e63946; 
+}
+
+header .navbar .navbar-nav {
+    margin-left: auto;
+}
+
+header .navbar .navbar-nav .nav-item {
+    margin-left: 10px; 
+}
+
+header .iconos {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px; 
+}
+
+header .iconos i {
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+header .iconos i:hover {
+    color: #e63946; 
+    transform: scale(1.1); 
+}
+
+.navbar .nav-link:hover,
+.navbar .fas:hover {
+    color: #e63946;
+    transition: color 0.3s ease;
+}
+
+.navbar .fas { 
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+
+.flag-img {
+    object-fit: fill;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+}
+
+
+/* FOOTER */
+footer{
+    background-color: #000;
+}
+
+footer .logo{
+    font-family: var(--ff-logo); 
+    font-weight: 800; 
+}
+
+.linea{
+    border-bottom:solid 1px #fff;
+}
+
+.android {
+    width: 150px;
+}
+
+.apple {
+    width: 164px;
+    height: 40px;
+}
+
+/* Estilos para pantallas con un ancho máximo de 1036px */
+@media (max-width: 1036px) {
+
+    /* Ajuste de las imágenes dentro de las cartas */
+    #principales .banderas img {
+        width: 45% !important; /* Las imágenes ocuparán el 100% del contenedor */
+        height: auto; /* La altura se ajusta proporcionalmente */
+        object-fit: contain; /* Mantiene la imagen dentro del contenedor sin distorsionarla */
+    }
+
+    #principales .card {
+        max-width: 500px; /* Tamaño máximo de la carta */
+        margin: 0 auto; /* Centra las cartas dentro del contenedor */
+    }
+}
+
+@media (max-width: 992px) {
+
+    .primera-parte {
+        flex-wrap: wrap;
+    }
+
+    .primera-parte .logo {
+        margin-bottom: 15px;
+    }
+    
+    .redes-sociales {
+        margin-bottom: 15px;
+    }
+    
+    .descargar {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .descargar img {
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 10px;
+    }
+    
+    .primera-parte p {
+        text-align: center;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .card-izquierda {
+      left: 50px;
+    }
+    
+    .card-derecha {
+        right: 50px;
+    }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 768px){
+
+      /* Ajuste de las imágenes dentro de las cartas */
+      #principales .banderas img {
+        width: 75px !important; /* Las imágenes ocuparán el 100% del contenedor */
+    }
+    
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 767px) {
+
+    .subtitulos {
+        text-align: center; /* Centra el texto */
+        width: 100%; /* Asegura que el texto ocupe todo el ancho disponible */
+    }
+    
+    /* Para pantallas medianas (tablets) */
+    .card {
+        width: 90%; /* Hace que las cartas ocupen el 90% del ancho de su contenedor */
+        margin: 0 auto; /* Centra las cartas */
+    }
+
+    /* Ajuste de las imágenes dentro de las cartas */
+    #principales .banderas img {
+        width: 150px !important; /* Las imágenes ocuparán el 100% del contenedor */
+    }
+
+    /* Ajuste para las cartas laterales */
+    .card-izquierda, .card-derecha {
+        left: 0;
+        right: 0;
+        margin: 0 auto; /* Remueve los márgenes laterales */
+    }
+
+    .row.g-3 {
+        margin-bottom: 10px; /* Ajusta el espacio entre filas en pantallas pequeñas */
+    }
+
+    .col-md-4 {
+        flex: 1 0 100%; /* Hace que cada carta ocupe el 100% de la fila en pantallas pequeñas */
+        margin-bottom: 15px; /* Ajuste de espacio entre cartas */
+    }
+
+    .primera-parte .logo{
+        display: none; /* Oculta el logo en tabletas y resoluciones menores */
+    }
+    
+     /* Ocultar texto de descarga en móviles */
+    .primera-parte p {
+    display: none;
+    }
+    
+    /* Ocultar enlaces de políticas y términos */
+    .segunda-parte .row a {
+    display: none;
+    }
+    
+    /* Ajustar tamaño de elementos */
+    .primera-parte .logo {
+    font-size: 1.2rem; /* Reducir logo */
+    }
+    
+    .redes-sociales {
+    margin-bottom: 15px;
+    }
+    
+    .descargar {
+    justify-content: center;
+    flex-wrap: wrap;
+    }
+    
+    .descargar img {
+    width: 100px;
+    }
+
+    .android { 
+        width: 100px !important; 
+    } 
+    
+    .apple{
+        position: relative;
+        bottom: 9px;
+        width: 80px !important;
+    }
+    
+    .redes-sociales i {
+        font-size: 1rem !important; /* Reducir iconos aún más */
+    }
+}
+
+@media (max-width: 576px) {
+    /* Para pantallas muy pequeñas (teléfonos móviles) */
+    .card {
+        width: 100%; /* Las cartas ocupan el 100% del contenedor */
+        margin: 0 auto; /* Centra las cartas */
+    }
+
+    /* Ajuste de márgenes laterales para la carta del medio */
+    .card-izquierda, .card-derecha {
+        left: 0;
+        right: 0;
+        margin: 0 auto; /* Remueve los márgenes laterales */
+    }
+
+    .primera-parte .logo {
+        font-size: 1rem;
+    }
+  
+    .redes-sociales i {
+        font-size: 1rem;
+        margin-right: 5px;
+    }
+  
+    .descargar img {
+        width: 90px;
+    }
+}
+
+@media (max-width: 576px){
+    /* Ajuste de las imágenes dentro de las cartas */
+    #principales .banderas img {
+        width: 100px !important; /* Las imágenes ocuparán el 100% del contenedor */
+    }
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 460px) {   
+
+    footer .redes-sociales i{
+        font-size: 0.7rem !important;
+    }
+
+    .descargar img {
+        position: relative;
+        top: 9px;
+        
+    }
+
+    footer .android{
+        width: 75px !important;
+    }
+
+    footer .apple{
+        top: -4.5px !important;
+        width: 60px !important;      
+    }
+
+    .copyright{
+        font-size: 0.6rem !important;
+    }
+}

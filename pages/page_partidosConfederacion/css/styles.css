@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{ 
+    --ff-logo:"Montserrat", sans-serif; 
+    --ff-parrafo: "Roboto", sans-serif; 
+    --ff-subtitulos:"Lato", sans-serif; 
+}
+
+a{
+    font-family: var(--ff-logo); 
+}
+
+p, span{ 
+    font-family: var(--ff-parrafo); 
+} 
+ 
+.subtitulos{ 
+    font-family: var(--ff-subtitulos); 
+    font-weight: 900; 
+}
+
+
+/* General styles */
+body {
+    font-family: 'Bakbak One' , sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+header {
+    background-color: #000; /* Navbar background color */
+    padding: 10px 0;
+}
+
+header .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-family: var(--ff-subtitulos); 
+    font-weight: 900; 
+}
+
+/* Estilo para el título FIFA */
+header .navbar .navbar-brand {
+    font-family: var(--ff-logo);
+    font-weight: 800; 
+    margin-left: 150px;  
+    padding-left: 20px; 
+}
+
+header .navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px; /* Increased spacing */
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #ffcc00 !important; /* Cambia el color al que prefieras */
+}
+
+/* Cambiar el color de los enlaces activos a rojo */
+.navbar .nav-item .nav-link.active {
+    color: #ffcc00; /* Rojo */
+}
+
+/* Modificación en la navbar */
+header .navbar .navbar-nav {
+    margin-left: auto; /* Alinea los enlaces de la navbar al centro */
+}
+
+/* Espaciado de los enlaces de la navbar */
+header .navbar .navbar-nav .nav-item {
+    margin-left: 10px; /* Añadir espacio entre los elementos de la lista */
+}
+
+header .iconos {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px; /* Add consistent spacing */
+}
+
+header .iconos i {
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+header .iconos i:hover {
+    color:#ffcc00; /* Cambia el color al rojo en hover */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el cursor */
+}
+
+.navbar .nav-link:hover,
+.navbar .fas:hover {
+    color:#ffcc00; /* Cambia a rojo al pasar el cursor */
+    transition: color 0.3s ease;
+}
+
+/* Aumenta ligeramente el tamaño de los íconos */
+.navbar .fas {
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.logo-liga {
+    max-width: 100%;  /* Ajusta el tamaño máximo del logo para que se ajuste al contenedor */
+    height: auto;     /* Mantiene la proporción del logo */
+    max-height: 60px; /* Limita la altura máxima del logo */
+    display: block;   /* Hace que la imagen se muestre como un bloque, para centrarla */
+    margin: 0 auto;   /* Centra el logo horizontalmente */
+    margin-top: 75px;
+}
+
+.bandera {
+    width: 25px;
+    height: 15px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.eliminatorias {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las filas se acomoden en varias columnas si es necesario */
+    gap: 16px; /* Espacio entre las columnas (o cards) */
+    justify-content: center; /* Centra las columnas horizontalmente */
+    padding: 16px;
+}
+
+.liga {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center; /* Centra verticalmente las ligas */
+}
+
+.liga-header {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* Espacio entre el logo y el nombre de la liga */
+}
+
+.liga-logo {
+    max-width: 80px;
+    height: auto;
+}
+
+.partidos-container {
+    display: flex;
+    flex-direction: row; /* Alinea las tarjetas de los partidos en una fila */
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.card {
+    width: 300px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.team-info {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra horizontalmente la información del equipo */
+    gap: 10px; /* Espacio entre la bandera y el nombre del equipo */
+}
+
+.team-flag {
+    width: 32px;
+    height: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    object-fit: cover;
+}
+
+footer{ 
+    background-color: #000;
+} 
+
+footer .logo{
+    font-family: var(--ff-logo); 
+    font-weight: 800; 
+}
+ 
+.linea{ 
+    border-bottom:solid 1px #fff; 
+} 
+ 
+.android { 
+    width: 150px; 
+} 
+ 
+.apple { 
+    width: 164px; 
+    height: 40px; 
+}
+
+.redes-sociales i {
+  font-size: 1.5rem; 
+  margin-right: 10px;
+}
+
+.partidos-container {
+    padding: 10px;
+}
+
+.list-group-item {
+    cursor: pointer;
+}
+
+.list-group-item:hover {
+    background-color: #e6e8ea;
+}
+
+.list-group-item p, span{
+    font-size: 1rem;
+}
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 560px) {
+   .list-group-item p, span{
+    font-size: 0.7rem;
+   }
+    
+}
+
+@media (max-width: 460px) {   
+
+    footer .redes-sociales i{
+        font-size: 0.7rem !important;
+    }
+
+    .descargar img {
+        position: relative;
+        top: 9px;
+        
+    }
+
+    footer .android{
+        width: 75px !important;
+    }
+
+    footer .apple{
+        top: -4.5px !important;
+        width: 60px !important;      
+    }
+
+    .copyright{
+        font-size: 0.6rem !important;
+    }
+}
+
+
+/* Tablet Styles (768px) */
+@media (max-width: 768px) {
+    /* Navbar */
+    header .navbar .navbar-nav .nav-item {
+        margin-left: 15px; 
+    }
+
+    .logo {
+        font-size: 2rem; 
+    }
+
+    .primera-parte .logo{
+        display: none; /* Oculta el logo en tabletas y resoluciones menores */
+    }
+    
+     /* Ocultar texto de descarga en móviles */
+    .primera-parte p {
+    display: none;
+    }
+    
+    /* Ocultar enlaces de políticas y términos */
+    .segunda-parte .row a {
+    display: none;
+    }
+    
+    /* Ajustar tamaño de elementos */
+    .primera-parte .logo {
+    font-size: 1.2rem; /* Reducir logo */
+    }
+    
+  
+    .redes-sociales {
+    margin-bottom: 15px;
+    }
+    
+    .descargar {
+    justify-content: center;
+    flex-wrap: wrap;
+    }
+    
+    .descargar img {
+    width: 100px;
+    }
+
+    .android { 
+        width: 100px !important; 
+    } 
+    
+    .apple{
+        position: relative;
+        bottom: 9px;
+        width: 80px !important;
+    }
+    
+    .redes-sociales i {
+        font-size: 1rem !important; /* Reducir iconos aún más */
+    }
+}
+
+/* Very small screens (mobile devices) */
+@media (max-width: 576px) {
+
+    .primera-parte .logo {
+        font-size: 1rem;
+    }
+  
+    .redes-sociales i {
+        font-size: 1rem;
+        margin-right: 5px;
+    }
+  
+    .descargar img {
+        width: 90px;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .primera-parte {
+        flex-wrap: wrap;
+    }
+
+    .primera-parte .logo {
+        margin-bottom: 15px;
+    }
+    
+    .redes-sociales {
+        margin-bottom: 15px;
+    }
+    
+    .descargar {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .descargar img {
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 10px;
+    }
+    
+    .primera-parte p {
+        text-align: center;
+    }
+}
