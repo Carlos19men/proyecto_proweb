@@ -1,0 +1,1232 @@
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{ 
+    --ff-logo:"Montserrat", sans-serif; 
+    --ff-parrafo: "Roboto", sans-serif; 
+    --ff-subtitulos:"Lato", sans-serif; 
+}
+
+a{
+    font-family: var(--ff-logo); 
+}
+
+p, span{ 
+    font-family: var(--ff-parrafo); 
+    font-weight: bold;
+} 
+ 
+.subtitulos{ 
+    font-family: var(--ff-subtitulos); 
+    font-weight: 900; 
+}
+
+/* General styles */
+body {
+    font-family: 'Bakbak One', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+header {
+    background-color: #000; /* Navbar background color */
+    padding: 10px 0;
+}
+
+header .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-family: var(--ff-subtitulos); 
+    font-weight: 900; 
+}
+
+/* Estilo para el título FIFA */
+header .navbar .navbar-brand {
+    font-weight: 800; 
+    margin-left: 150px;  
+    padding-left: 20px; 
+}
+
+header .navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px; /* Increased spacing */
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #ffcc00 !important; /* Cambia el color al que prefieras */
+}
+
+/* Cambiar el color de los enlaces activos a rojo */
+.navbar .nav-item .nav-link.active {
+    color: #ffcc00; /* Rojo */
+}
+
+/* Modificación en la navbar */
+header .navbar .navbar-nav {
+    margin-left: auto; /* Alinea los enlaces de la navbar al centro */
+}
+
+/* Espaciado de los enlaces de la navbar */
+header .navbar .navbar-nav .nav-item {
+    margin-left: 20px; /* Añadir espacio entre los elementos de la lista */
+}
+
+header .iconos {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px; /* Add consistent spacing */
+}
+
+header .iconos i {
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+header .iconos i:hover {
+    color:#ffcc00; /* Cambia el color al rojo en hover */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el cursor */
+}
+
+.navbar .nav-link:hover,
+.navbar .fas:hover {
+    color:#ffcc00; /* Cambia a rojo al pasar el cursor */
+    transition: color 0.3s ease;
+}
+
+/* Aumenta ligeramente el tamaño de los íconos */
+.navbar .fas {
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.contenedor-principal {
+    background-color: white;
+    padding: 20px;
+}
+
+.info-partido {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.info-partido h2 , .info-partido p, .info-partido span, .subtitulos{
+    font-weight: bold;
+}
+
+.info-partido .equipos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.info-partido .equipo img {
+    width: 100%; /* Ajusta el ancho al 100% del contenedor */
+    height: auto; /* Mantiene la proporción original de la imagen */
+    max-width: 300px; /* Tamaño máximo en pantallas grandes */
+    object-fit: cover; /* Recorta la imagen si es necesario para ajustarse al contenedor */
+    border-radius: 0px; /* Bordes rectos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle un efecto visual */
+}
+
+.info-partido .marcador{
+    font-size: 2rem;
+    font-weight: bold;
+    color:black;
+}
+
+/* Reducir el tamaño del logo de la confederación */
+.logo-confederacion {
+    width: 100%; /* Ajusta este valor según el tamaño que prefieras */
+    height: 30px; /* Mantener la proporción de la imagen */
+    object-fit: contain;
+    vertical-align: middle; /* Alinear verticalmente con el texto */
+}
+
+/* Asegurarse de que el nombre de la confederación también esté alineado */
+.confederacion {
+    font-size: 16px; /* Ajusta el tamaño del texto si es necesario */
+    display: inline-flex;
+    align-items: center;
+}
+
+.detalles {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.estadisticas h3 {
+    text-align: left; /* Alinea el título de Estadísticas a la izquierda */
+    margin-bottom: 10px; /* Espaciado inferior para separación */
+    margin-left: 50px;
+}
+
+.alineaciones h3 {
+    text-align: right; /* Alinea el título de Alineaciones a la derecha */
+    margin-bottom: 10px; /* Espaciado inferior para separación */
+    margin-right: 50px;
+}
+
+/* Ajustes de las secciones de contenido */
+.detalles {
+    margin-top: 20px;
+}
+
+/* Estilos para los títulos */
+.titulos-secciones {
+    background: black; /* Degradado de fondo */
+    color: #fff; /* Color de texto */
+    padding: 9px 0; /* Espaciado superior e inferior */
+    margin-bottom: 20px; /* Separación del contenido de abajo */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra alrededor */
+    border-radius: 8px; /* Bordes redondeados */
+    text-align: center;
+    position: relative; /* Necesario para el subrayado */
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.titulos-secciones h3 {
+    display: inline-block;
+    font-size: 1.5rem; /* Tamaño del texto más grande */
+    font-weight: bold; /* Resalta el texto */
+    text-transform: uppercase; /* Todo en mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras para mayor claridad */
+    position: relative; /* Posición relativa para el subrayado animado */
+    padding: 0 15px; /* Espaciado a los lados */
+    transition: all 0.3s ease; /* Transición suave para hover */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Sombra al texto */
+    text-align: center;
+    cursor: pointer;
+    margin: 0;
+}
+
+/* Efecto hover en los títulos */
+.titulos-secciones h3:hover {
+    color: #ffcc00; /* Cambio de color al pasar el cursor */
+    transform: scale(1.02); /* Ligeramente agranda el texto al hacer hover */
+}
+
+.titulo::after {
+    content: ''; /* Subrayado dinámico */
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Posicionado justo debajo del texto */
+    height: 3px;
+    background-color: #ffcc00; /* Color del subrayado */
+    transition: width 0.3s ease;
+    width: 0; /* Empieza oculto */
+}
+
+/* Efecto hover: el subrayado se muestra solo al pasar el ratón */
+.titulo:hover::after {
+    width: 100%;
+}
+
+/* Cuando se hace clic, se extiende el subrayado en todo el cuadro */
+.titulo.clicked::after {
+    width: 100%;
+}
+
+/* Alinea a la izquierda el título de estadísticas */
+.titulo-estadisticas {
+    text-align: left;
+}
+
+/* Alinea a la derecha el título de alineaciones */
+.titulo-alineaciones {
+    text-align: right;
+}
+
+.titulo:hover {
+    color: #f8f9fa; /* Cambia el color del texto a blanco */
+}
+
+.estadisticas .contenido{
+    width: 80%;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.encabezado-estadisticas {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Alinea el título y las imágenes verticalmente */
+    width: 100%;
+    margin-bottom: 20px; /* Separación entre el título y el resto */
+}
+
+.imagenes-titulo {
+    display: flex;
+    justify-content: space-between; /* Distribuye las imágenes y el título */
+    align-items: center; /* Centra las imágenes y el título verticalmente */
+    width: 100%; /* Asegura que el contenido ocupe todo el ancho disponible */
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2)); /* Aplica una sombra suave */
+}
+
+.encabezado-estadisticas h2 {
+    margin: 0;
+}
+
+.titulo-estadisticas-centro {
+    display: flex;
+    justify-content: center; /* Centra el título */
+    align-items: center;
+    flex-grow: 1; /* Hace que el título ocupe el espacio restante */
+    text-align: center;
+}
+
+/* Alineación de la imagen y el título */
+.estadisticas {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Alineación de los íconos si es necesario */
+.estadisticas .iconos {
+    display: flex;
+    justify-content: center; /* Centra los íconos */
+    gap: 15px;
+}
+
+/* Ajustes adicionales si el contenido es muy grande */
+.estadisticas .contenido-estadisticas {
+    max-width: 100%; /* Asegura que no se desborde */
+    overflow-x: auto; /* Permite que el contenido se desplace horizontalmente si es necesario */
+}
+
+.imagenes-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px; /* Espacio entre el título y las imágenes */
+}
+
+.contenido-estadisticas {
+    display: flex;
+    justify-content: space-between; /* Distribuye las columnas horizontalmente */
+    align-items: flex-start; /* Asegura que todo esté alineado al inicio vertical */
+    gap: 20px; /* Espacio entre las columnas */
+}
+
+.columna {
+    display: flex;
+    flex-direction: column; /* Coloca la imagen encima del contenido */
+    align-items: center; /* Centra la imagen y el contenido */
+    text-align: center; /* Centra el contenido dentro de cada columna */
+}
+
+.columna ul{
+    list-style-type: none;
+}
+
+.imagen-columna {
+    width: 100px; /* Tamaño de la imagen (ajústalo según tus necesidades) */
+    height: auto; /* Mantén la proporción de la imagen */
+    margin-bottom: 10px; /* Espacio entre la imagen y el contenido */
+    margin-top: 30px;
+}
+
+.columna-izquierda, .columna-derecha, .etiquetas ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+.columna-izquierda, .columna-derecha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+.columna-izquierda {
+    text-align: left; /* Asegura alineación al margen izquierdo */
+}
+
+.columna-derecha {
+    text-align: right; /* Asegura alineación al margen derecho */
+}
+
+.columna-izquierda li{
+    margin-left: 15px;
+}
+
+.columna-derecha li{
+    margin-right: 40px;
+}
+
+.columna-izquierda li, .columna-derecha li {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px; /* Espacio entre cada "X" */
+    list-style: none;
+}
+
+.etiquetas {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    margin-top: 0px;
+    position: relative;
+    justify-content: center;
+    align-items: center;  /* Centra horizontalmente */
+}
+
+.etiquetas li {
+    font-size: 16px;
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.informacion-equipo {
+    background-color: #228B22; /* Fondo verde */
+    color: white; /* Texto blanco */
+    padding: 15px 20px; /* Espaciado interno */
+    position: relative; /* Para la sombra */
+    display: flex; /* Alineación horizontal */
+    justify-content: space-between; /* Separar elementos */
+    align-items: center; /* Centrar contenido verticalmente */
+}
+
+  /* Contenedor del país (imagen + texto) */
+.pais {
+    display: flex; /* Alinear imagen y texto en línea */
+    align-items: center; /* Centrar verticalmente */
+}
+
+/* Imagen de la bandera */
+.pais img {
+    width: 60px; /* Tamaño más grande */
+    height: 40px;
+    border-radius: 3px; /* Bordes ligeramente redondeados */
+    margin-right: 15px; /* Espaciado entre imagen y texto */
+}
+
+.nombre-pais {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.formacion {
+    font-size: 16px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+#alineaciones {
+    position: relative;
+}
+
+.img-fluid {
+    position: relative;
+    width: 100%;  /* Ajustar el tamaño de la imagen al 100% del contenedor */
+    height: auto; /* Mantener la proporción de la imagen */
+}
+
+.jugador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 45%;
+}
+
+.jugador-circulo {
+    background-color: rgb(255, 0, 0);
+    border: 4px solid rgb(255, 255, 255); /* Borde azul con estilo discontinuo */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+
+ /* Estilo del número dentro del círculo */
+ .numero-jugador {
+    font-family: 'Bakbak One', sans-serif;;
+    color: rgb(255, 255, 255); /* Color del texto */
+    font-size: 20px !important; /* Tamaño del texto */
+    font-weight: bold; /* Negrita */
+    margin: 0; /* Sin margen */
+    padding: 0; /* Sin relleno */
+    background: none !important; /* Asegura que no haya color de fondo */
+    border: none; /* Sin bordes */
+    line-height: 1; /* Altura de línea controlada */
+}
+
+.nombre-jugador {
+    font-size: 16px !important;
+    font-weight: normal;
+    color: white; /* Cambiar el color del texto a blanco */
+    background-color: rgba(0, 0, 0, 0.278); /* Fondo oscuro con transparencia */
+    padding: 3px 8px; /* Añadir un poco de espacio alrededor del texto */
+    border-radius: 5px; /* Bordes redondeados para un diseño más atractivo */
+    margin-top: 5px;
+    text-align: center;
+}
+
+/* Colores para el equipo local */
+.equipo-local .jugador-circulo {
+    background-color: #3498db; /* Color para el equipo local (ej. azul) */
+}
+
+/* Colores para el equipo visitante */
+.equipo-visitante .jugador-circulo {
+    background-color: #e74c3c; /* Color para el equipo visitante (ej. rojo) */
+}
+
+.seccion-suplentes {
+    text-align: center;
+    padding: 20px;
+}
+
+.encabezado-suplentes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de suplentes */
+.contenedor-suplentes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.encabezado-suplentes .imagen-columna {
+    width: 50px; /* Tamaño de las banderas */
+    height: auto;
+    margin-right: 10px; /* Reduce el espacio a la derecha */
+    margin-left: 10px;  /* Reduce el espacio a la izquierda */
+}
+
+.columna-suplentes {
+    width: 45%;
+}
+
+.encabezado-suplentes .columna {
+    display: flex;
+    align-items: center;
+}
+
+.encabezado-suplentes .imagen-columna {
+    width: 100px; /* Tamaño ajustado */
+    height: auto;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+.contenedor-suplentes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.columna-suplentes {
+    width: 50%;
+}
+
+.columna-suplentes ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.columna-suplentes li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.columna-suplentes .nombre-jugadorS {
+    flex-grow: 1;
+}
+
+.jugadorS {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.columna-suplentes.izquierda .jugadorS {
+    justify-content: flex-start;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.columna-suplentes.izquierda .numero-jugadorS {
+    margin-right: 10px;
+}
+
+.columna-suplentes.derecha .jugadorS {
+    justify-content: flex-start;
+    text-align: right;
+    margin-left: 20px;
+}
+
+.columna-suplentes.derecha .numero-jugadorS {
+    margin-left: 10px;
+}
+
+.numero-jugadorS {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.nombre-jugadorS {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.columna-suplentes img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* Sección de Directores Técnicos */
+.directores-tecnicos {
+    display: flex;
+    align-items: center; /* Alinea verticalmente */
+    justify-content: space-between;
+    margin-top: 20px; /* Separación respecto al encabezado */
+    text-align: center;
+}
+
+.nombre-equipo {
+    flex: 1; /* Asegura que los nombres ocupen el mismo espacio */
+    font-size: 1rem; /* Tamaño del texto */
+    color: #333; /* Color del texto */
+}
+
+.nombre-equipo.izquierda {
+    text-align: left; /* Alineación izquierda */
+    margin-left: 10px; /* Opcional: Ajusta la separación lateral */
+    position: relative;
+    top: 24px;
+}
+
+.nombre-equipo.derecha {
+    text-align: right; /* Alineación derecha */
+    margin-right: 10px; /* Opcional: Ajusta la separación lateral */
+}
+
+.titulo-directores {
+    flex: 0.5; /* Espacio proporcional para el título */
+    font-size: 1.2rem;
+    text-align: center; /* Alineación centrada */
+    color: #000; /* Color del título */
+}
+
+.lugar{
+    position: relative;
+    top: 60px;
+    margin-bottom: 30px;
+}
+
+.texto-gris {
+    color: #333; /* Color gris */
+}
+
+footer{ 
+    background-color: #000;
+} 
+ 
+.linea{ 
+    border-bottom:solid 1px #fff; 
+} 
+ 
+.android { 
+    width: 150px; 
+} 
+ 
+.apple { 
+    width: 164px; 
+    height: 40px; 
+}
+
+@media (max-width: 990px) {
+
+    .info-partido .equipo img {
+        max-width: 200px; /* Ajusta aún más las imágenes en teléfonos */
+    }
+
+    .jugador-circulo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .numero-jugador{
+        font-size: 15px !important;
+    }
+
+    .nombre-jugador {
+        position: relative;
+        top: -6px;
+        font-size: 5px !important; /* Reduce el tamaño del nombre */
+    }
+
+    .equipo-local .jugador-circulo{
+        position: relative;
+        top: -5px;      
+    }
+
+    .equipo-visitante .jugador-circulo{
+        position: relative;
+        top: -15px;      
+    }
+
+    .equipo-visitante .nombre-jugador{
+        position: relative;
+        top: -23px;      
+    }
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 460px) {   
+
+    footer .redes-sociales i{
+        font-size: 0.7rem !important;
+    }
+
+    .descargar img {
+        position: relative;
+        top: 9px;
+        
+    }
+
+    footer .android{
+        width: 75px !important;
+    }
+
+    footer .apple{
+        top: -4.5px !important;
+        width: 60px !important;      
+    }
+
+    .copyright{
+        font-size: 0.6rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .info-partido .equipos {
+        gap: 5px; /* Reduce el espacio entre los elementos */
+    }
+
+    .info-partido .marcador {
+        font-size: 1.5rem; /* Reduce el tamaño del marcador */
+        padding: 8px; /* Reduce el relleno del marcador */
+    }
+
+    .info-partido .equipo img {
+        max-width: 120px; /* Reduce el tamaño máximo en pantallas medianas */
+    }
+    
+    .logo-confederacion {
+        max-width: 40px;
+    }
+
+    .info-partido .marcador {
+        font-size: 15px; /* Reduce el tamaño del marcador para móviles */
+    }
+
+    .titulo::after {
+        bottom: 1px; /* Elevar el subrayado */
+        height: 2px; /* Hacer el subrayado más delgado */
+    }
+
+    .titulo.clicked::after {
+        width: 100%; /* Mantener el subrayado completo */
+    }
+
+    .jugador-circulo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .numero-jugador{
+        font-size: 12px !important;
+    }
+
+    .nombre-jugador {
+        position: relative;
+        top: -6px;
+        font-size: 3px !important; /* Reduce el tamaño del nombre */
+    }
+
+    .equipo-local .jugador-circulo{
+        position: relative;
+        top: 1px;      
+    }
+
+    .equipo-visitante .jugador-circulo{
+        position: relative;
+        top: -20px;      
+    }
+
+    .equipo-visitante .nombre-jugador{
+        position: relative;
+        top: -28px;      
+    }
+
+    .primera-parte .logo{
+        display: none; /* Oculta el logo en tabletas y resoluciones menores */
+    }
+    
+     /* Ocultar texto de descarga en móviles */
+    .primera-parte p {
+    display: none;
+    }
+    
+    /* Ocultar enlaces de políticas y términos */
+    .segunda-parte .row a {
+    display: none;
+    }
+    
+    /* Ajustar tamaño de elementos */
+    .primera-parte .logo {
+    font-size: 1.2rem; /* Reducir logo */
+    }
+    
+  
+    .redes-sociales {
+    margin-bottom: 15px;
+    }
+    
+    .descargar {
+    justify-content: center;
+    flex-wrap: wrap;
+    }
+    
+    .descargar img {
+    width: 100px;
+    }
+
+    .android { 
+        width: 100px !important; 
+    } 
+    
+    .apple{
+        position: relative;
+        bottom: 9px;
+        width: 80px !important;
+    }
+    
+    .redes-sociales i {
+        font-size: 1rem !important; /* Reducir iconos aún más */
+    }
+}
+
+/* Very small screens (mobile devices) */
+@media (max-width: 576px) {
+
+    .primera-parte .logo {
+        font-size: 1rem;
+    }
+  
+    .redes-sociales i {
+        font-size: 1rem;
+        margin-right: 5px;
+    }
+  
+    .descargar img {
+        width: 90px;
+    }
+}
+
+@media (max-width: 500px) {
+    .info-partido h2 {
+        font-size: 1.2rem;
+    }
+
+    .info-partido .equipos {
+        gap: 10px; /* Reduce más el espacio entre los elementos */
+    }
+
+    .info-partido .equipo img {
+        max-width: 120px; /* Ajusta aún más las imágenes en teléfonos */
+    }
+
+    .info-partido .marcador {
+        font-size: 12px; /* Reduce el tamaño del marcador para móviles */
+    }
+
+    .titulos-secciones .titulo {
+        font-size: 1.2rem; /* Reducir el tamaño del texto */
+    }
+
+      /* Reducir las imágenes en pantallas pequeñas */
+      .imagenes-titulo .columna img {
+        max-width: 70px; /* Las imágenes se hacen más pequeñas */
+        height: auto;
+    }
+
+    .encabezado-estadisticas h2{
+        position: relative;
+        top: 20px;
+        font-size: 14px;
+        width: 75%;
+    }
+
+    .contenido-estadisticas .columna-izquierda,
+    .contenido-estadisticas .columna-derecha,
+    .contenido-estadisticas .columna.etiquetas {
+        width: 100%; /* Las columnas ocuparán todo el ancho disponible */
+    }
+
+    .contenido-estadisticas li{
+        font-size: 12px;
+    }
+
+    .etiquetas li{
+        position: relative;
+        width: 150%; 
+    }
+
+    .columna-izquierda li{
+        position: relative;
+        right: 40px;
+    }
+    
+    .columna-derecha li{
+        position: relative;
+        left: 25px;
+    }
+
+    .informacion-equipo {
+        padding: 5px;
+    }
+
+    .pais {
+        margin-right: 10px;
+    }
+
+    .pais img.bandera {
+        width: 50px;  /* Establece el ancho fijo */
+        height: auto;  /* Mantiene la proporción original de la imagen */
+        object-fit: contain;  /* Ajusta la imagen para que no se deforme */
+        margin-right: 10px;
+    }    
+
+    .pais .nombre-pais {
+        font-size: 0.9rem;
+    }
+
+    .formacion {
+        font-size: 0.9rem;
+    }
+
+    .jugador{
+        margin-top: -10px;
+    }
+
+    .jugador-circulo {
+        width: 25px;
+        height: 25px;
+        border: 2px solid rgb(255, 255, 255);
+    }
+
+    .numero-jugador{
+        font-size: 10px !important;
+    }
+
+    .nombre-jugador {
+        position: relative;
+        top: 10px;
+        font-size: 2px !important; /* Reduce el tamaño del nombre */
+    }
+
+    .equipo-local .jugador-circulo{
+        position: relative;
+        top: 17px;      
+    }
+
+    .equipo-visitante .jugador-circulo{
+        position: relative;
+        top: 5px;      
+    }
+
+    .equipo-visitante .nombre-jugador{
+        position: relative;
+        top: -4px;      
+    }
+
+    .imagen-columna {
+        max-width: 60px; /* Reducir el tamaño de las imágenes */
+    }
+
+    .titulo-estadisticas-centro h2 {
+        font-size: 16px;
+    }
+
+    .encabezado-suplentes .titulo-estadisticas-centro h2{
+        font-size: 15px;
+        position: relative;
+        top: 15px;
+    }
+
+    .jugadorS .nombre-jugadorS {
+        font-size: 12px; /* Ajustar el tamaño de texto */
+    }
+
+    .jugadorS .numero-jugadorS{
+        font-size: 12px;
+        width: 30px;
+        height: 20px;
+    }
+
+    .nombre-jugadorS {
+        width: 100%;
+    }
+
+    #directores-tecnicos .titulo-directores{
+        font-size: 16px;
+    }
+
+    #directores-tecnicos .nombre-equipo {
+        font-size: 12px;
+    }
+
+    .nombre-equipo.izquierda{
+        top: 18px;  
+    }
+
+    .nombre-lugar{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .primera-parte {
+        flex-wrap: wrap;
+    }
+
+    .primera-parte .logo {
+        margin-bottom: 15px;
+    }
+    
+    .redes-sociales {
+        margin-bottom: 15px;
+    }
+    
+    .descargar {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .descargar img {
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 10px;
+    }
+    
+    .primera-parte p {
+        text-align: center;
+    }
+}
+
+
+/* Media query para pantallas de 412px (teléfonos) */
+@media (max-width: 412px) {
+    .info-partido {
+        padding: 9px;
+    }
+
+    .info-partido p{
+        font-size: 10px;
+    }
+
+    .info-partido h2{
+        font-size: 16px;
+    }
+
+    .info-partido span{
+        font-size: 9px;
+    }
+
+    .info-partido .equipos {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .info-partido .equipo img {
+        max-width: 60px; /* Ajusta las imágenes para que sean más pequeñas en 412px */
+    }
+
+    .info-partido .marcador {
+        font-size: 12px; /* Reduce el tamaño del marcador para móviles */
+    }
+
+    .titulos-secciones {
+        padding: 0 10px; /* Ajustar los márgenes laterales */
+    }
+
+    .titulos-secciones .titulo {
+        font-size: 0.7rem; /* Reducir el tamaño del texto */
+        padding: 5px; /* Reducir el espaciado */
+    }
+
+    .encabezado-estadisticas h2{
+        position: relative;
+        top: 20px;
+        font-size: 10px;
+    }
+
+      /* Reducir las imágenes aún más en pantallas pequeñas */
+    .imagenes-titulo .columna img {
+        max-width: 40px;
+        height: auto;
+    }
+
+    .contenido-estadisticas .columna-izquierda,
+    .contenido-estadisticas .columna-derecha,
+    .contenido-estadisticas .columna.etiquetas {
+        width: 100%; /* Las columnas ocuparán todo el ancho disponible */
+        margin-bottom: 10px; /* Espaciado entre las secciones */
+    }
+
+    .contenido-estadisticas li{
+        font-size: 10px;
+    }
+
+    .etiquetas li{
+        position: relative;
+        width: 150%; 
+        left: 2px;  
+        font-size: 10px; 
+    }
+
+    .pais {
+        display: flex;
+        align-items: center;
+        margin-right: 5px;
+        margin-bottom: 5px; /* Añade un pequeño margen inferior para que no se peguen los elementos */
+    }
+
+    .pais img.bandera {
+        width: 35px; /* Reducir el tamaño de la bandera */
+        margin-right: 5px;
+    }
+
+    .pais .nombre-pais {
+        font-size: 0.8rem; /* Reducir el tamaño de la fuente para pantallas pequeñas */
+    }
+
+    .formacion {
+        font-size: 0.8rem; /* Reducir el tamaño de la fuente para pantallas pequeñas */
+    }
+
+    .jugador-circulo {
+        width: 18px;
+        height: 18px;
+        border: 2px solid rgb(255, 255, 255);
+    }
+
+    .numero-jugador{
+        font-size: 6px !important;
+    }
+
+    .nombre-jugador {
+        position: relative;
+        top: 12px;
+        font-size: 1px !important; /* Reduce el tamaño del nombre */
+        left: -10%;
+    }
+
+    .jugador-circulo{
+        position: relative;
+        left: -10%;
+    }
+
+    .equipo-local .jugador-circulo{
+        position: relative;
+        top: 20px;      
+    }
+
+    .equipo-visitante .jugador-circulo{
+        position: relative;
+        top: 5px;      
+    }
+
+    .equipo-visitante .nombre-jugador{
+        position: relative;
+        top: -4px;      
+    }
+
+    .encabezado-suplentes .titulo-estadisticas-centro h2{
+        font-size: 15px;
+        position: relative;
+        top: 15px;
+    }
+
+    .jugadorS .nombre-jugadorS {
+        font-size: 11px; /* Ajustar el tamaño de texto */
+    }
+
+    .jugadorS .numero-jugadorS{
+        font-size: 11px;
+    }
+
+    .nombre-jugadorS {
+        width: 100%;
+    }
+
+    #suplentes p{
+       font-size: 11px; 
+    }
+
+    .numero-jugadorS {
+        width: 20px;
+        height: 20px;
+    }
+
+    #directores-tecnicos .titulo-directores{
+        font-size: 12px;
+    }
+
+    .nombre-lugar{
+        position: relative;
+        left: -30px;
+    }
+}

@@ -1,0 +1,423 @@
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{ 
+    --ff-logo:"Montserrat", sans-serif; 
+    --ff-parrafo: "Roboto", sans-serif; 
+    --ff-subtitulos:"Lato", sans-serif; 
+}
+
+a{
+    font-family: var(--ff-logo); 
+}
+
+p, span{ 
+    font-family: var(--ff-parrafo); 
+    font-weight: bold;
+} 
+ 
+.subtitulos{ 
+    font-family: var(--ff-subtitulos); 
+    font-weight: 900; 
+}
+
+/* General styles */
+body {
+    font-family: 'Bakbak One', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+header {
+    background-color: #000; /* Navbar background color */
+    padding: 10px 0;
+}
+
+header .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-family: var(--ff-subtitulos); 
+    font-weight: 900; 
+}
+
+/* Estilo para el título FIFA */
+header .navbar .navbar-brand {
+    font-weight: 800; 
+    margin-left: 150px;  
+    padding-left: 20px; 
+}
+
+header .navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px; /* Increased spacing */
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #ffcc00 !important; /* Cambia el color al que prefieras */
+}
+
+/* Cambiar el color de los enlaces activos a rojo */
+.navbar .nav-item .nav-link.active {
+    color: #ffcc00; /* Rojo */
+}
+
+/* Modificación en la navbar */
+header .navbar .navbar-nav {
+    margin-left: auto; /* Alinea los enlaces de la navbar al centro */
+}
+
+/* Espaciado de los enlaces de la navbar */
+header .navbar .navbar-nav .nav-item {
+    margin-left: 20px; /* Añadir espacio entre los elementos de la lista */
+}
+
+header .iconos {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px; /* Add consistent spacing */
+}
+
+header .iconos i {
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+header .iconos i:hover {
+    color:#ffcc00; /* Cambia el color al rojo en hover */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el cursor */
+}
+
+.navbar .nav-link:hover,
+.navbar .fas:hover {
+    color:#ffcc00; /* Cambia a rojo al pasar el cursor */
+    transition: color 0.3s ease;
+}
+
+/* Aumenta ligeramente el tamaño de los íconos */
+.navbar .fas {
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.contenedor-principal {
+    background-color: white;
+    padding: 20px;
+}
+
+.contenedor {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de la clasificación */
+.ranking-container {
+    margin-top: 30px; /* Baja el contenedor */
+    text-align: center; /* Centra el título */
+}
+
+/* Estilo del título */
+.ranking-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px; /* Espacio entre el título y las tarjetas */
+}
+
+#ranking-slider {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas pasen a una nueva fila */
+    gap: 15px; /* Espacio uniforme entre las tarjetas */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    align-items: center; /* Centra las tarjetas verticalmente */
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+/* Estilo para las tarjetas */
+.slider-item {
+    margin: 0; /* Elimina márgenes exteriores */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombras para dar profundidad */
+    background-color: #fff; /* Fondo blanco para las tarjetas */
+    transition: transform 0.3s ease; /* Efecto al pasar el ratón */
+}
+
+/* Efecto hover en las tarjetas */
+.slider-item:hover {
+    transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
+}
+
+.fas.fa-arrow-up {
+    color: rgb(0, 221, 0);
+}
+
+.fas.fa-arrow-down{
+    color: red;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-img-top {
+    width: 60px; /* Tamaño de la bandera */
+    height: auto;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+.fechas {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 20px;
+}
+.clasificacion {
+    table-layout: fixed; /* Hace que las celdas mantengan un ancho fijo */
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px; /* Agrega un espacio de 10px entre las filas */
+    border-radius: 8px;
+    overflow: hidden;
+}
+.clasificacion th, .clasificacion td {
+    text-align: left;
+}
+.clasificacion th {
+    font-weight: bold;
+    padding: 12px;
+}
+.clasificacion td {
+    padding-bottom: 15px; /* Espacio dentro de las celdas */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff; /* Fondo blanco para las celdas */
+}
+
+.clasificacion .izquierda{
+    position: relative;
+    left: 5px;
+    border-right: none;
+}
+
+.clasificacion .centro{
+    border-left: none;
+    border-right: none;
+    position: relative;
+    text-align: left;
+}
+
+.clasificacion .derecha{
+    position: relative;
+    right: 5px;
+    border-left: none;
+    text-align: right;
+}
+
+/* Para las banderas dentro de las celdas */
+.clasificacion td img {
+    width: 20px;
+    height: 15px;
+}
+
+.mostrar-mas {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #C00F0C;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-left: 30%;
+}
+.mostrar-mas:hover {
+    background: #8f0b08;
+}
+
+footer{ 
+    background-color: #000;
+} 
+ 
+.linea{ 
+    border-bottom:solid 1px #fff; 
+} 
+ 
+.android { 
+    width: 150px; 
+} 
+ 
+.apple { 
+    width: 164px; 
+    height: 40px; 
+}
+
+@media (max-width: 992px) {
+
+    .primera-parte {
+        flex-wrap: wrap;
+    }
+
+    .primera-parte .logo {
+        margin-bottom: 15px;
+    }
+    
+    .redes-sociales {
+        margin-bottom: 15px;
+    }
+    
+    .descargar {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .descargar img {
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 10px;
+    }
+    
+    .primera-parte p {
+        text-align: center;
+    }
+}
+
+/* Very small screens (mobile devices) */
+@media (max-width: 576px) {
+
+    .primera-parte .logo {
+        font-size: 1rem;
+    }
+  
+    .redes-sociales i {
+        font-size: 1rem;
+        margin-right: 5px;
+    }
+  
+    .descargar img {
+        width: 90px;
+    }
+}
+
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .slider-item {
+        flex: 1 1 30%; /* Cada tarjeta ocupa el 30% del ancho en pantallas pequeñas */
+    }
+
+    .card-img-top {
+        width: 65px !important; /* Tamaño de la bandera */
+        height: auto;
+    }
+    
+    .card-text{
+        font-size: 10px;
+    }
+
+    .primera-parte .logo{
+        display: none; /* Oculta el logo en tabletas y resoluciones menores */
+    }
+    
+     /* Ocultar texto de descarga en móviles */
+    .primera-parte p {
+    display: none;
+    }
+    
+    /* Ocultar enlaces de políticas y términos */
+    .segunda-parte .row a {
+    display: none;
+    }
+    
+    /* Ajustar tamaño de elementos */
+    .primera-parte .logo {
+    font-size: 1.2rem; /* Reducir logo */
+    }
+    
+  
+    .redes-sociales {
+    margin-bottom: 15px;
+    }
+    
+    .descargar {
+    justify-content: center;
+    flex-wrap: wrap;
+    }
+    
+    .descargar img {
+    width: 100px;
+    }
+
+    .android { 
+        width: 100px !important; 
+    } 
+    
+    .apple{
+        position: relative;
+        bottom: 9px;
+        width: 80px !important;
+    }
+    
+    .redes-sociales i {
+        font-size: 1rem !important; /* Reducir iconos aún más */
+    }
+}
+
+@media (max-width: 600px){
+    .mostrar-mas {
+        font-size: 12px;
+        margin-left: 25%;
+    }
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 460px) {   
+
+    footer .redes-sociales i{
+        font-size: 0.7rem !important;
+    }
+
+    .descargar img {
+        position: relative;
+        top: 9px;
+        
+    }
+
+    footer .android{
+        width: 75px !important;
+    }
+
+    footer .apple{
+        top: -4.5px !important;
+        width: 60px !important;      
+    }
+
+    .copyright{
+        font-size: 0.6rem !important;
+    }
+}
+
+
+@media (max-width: 400px){
+    .mostrar-mas {
+        font-size: 10px;
+        margin-left: 12.5%;
+    }
+}

@@ -1,0 +1,370 @@
+/* Importar fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    background-color: #f8f9fa;
+}
+:root{ 
+    --ff-logo:"Montserrat", sans-serif; 
+    --ff-parrafo: "Roboto", sans-serif; 
+    --ff-subtitulos:"Lato", sans-serif; 
+}
+
+a{
+    font-family: var(--ff-logo); 
+}
+
+p, span{ 
+    font-family: var(--ff-parrafo); 
+    font-weight: bold;
+} 
+ 
+.subtitulos{ 
+    font-family: var(--ff-subtitulos); 
+    font-weight: 900; 
+}
+
+/* General styles */
+body {
+    font-family: 'Bakbak One' , sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+
+h1 {
+    font-family: 'Lato', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #000;
+}
+
+.container-uefa p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+header {
+    background-color: #000; /* Navbar background color */
+    padding: 10px 0;
+}
+
+header .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-family: var(--ff-subtitulos); 
+    font-weight: 900; 
+}
+
+/* Estilo para el título FIFA */
+header .navbar .navbar-brand {
+    font-family: var(--ff-logo);
+    font-weight: 800; 
+    margin-left: 150px;  
+    padding-left: 20px; 
+}
+
+header .navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px; /* Increased spacing */
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #ffcc00 !important; /* Cambia el color al que prefieras */
+}
+
+/* Cambiar el color de los enlaces activos a rojo */
+.navbar .nav-item .nav-link.active {
+    color: #ffcc00; /* Rojo */
+}
+
+/* Modificación en la navbar */
+header .navbar .navbar-nav {
+    margin-left: auto; /* Alinea los enlaces de la navbar al centro */
+}
+
+/* Espaciado de los enlaces de la navbar */
+header .navbar .navbar-nav .nav-item {
+    margin-left: 10px; /* Añadir espacio entre los elementos de la lista */
+}
+
+header .iconos {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px; /* Add consistent spacing */
+}
+
+header .iconos i {
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+header .iconos i:hover {
+    color:#ffcc00; /* Cambia el color al rojo en hover */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el cursor */
+}
+
+.navbar .nav-link:hover,
+.navbar .fas:hover {
+    color:#ffcc00; /* Cambia a rojo al pasar el cursor */
+    transition: color 0.3s ease;
+}
+
+/* Aumenta ligeramente el tamaño de los íconos */
+.navbar .fas {
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Contenedor principal que usa flexbox */
+.container-uefa {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    width: 100%;
+}
+
+.text-section {
+    flex: 0 0 30%; /* 30% de la página */
+    padding: 40px;
+    background-color: #f8f9fa;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.image-section {
+    flex: 0 0 70%; /* 70% de la página */
+    height: 100%;
+}
+
+.image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* FOOTER */
+footer{
+    background-color: #000;
+}
+
+footer .logo{
+    font-family: var(--ff-logo); 
+    font-weight: 800; 
+}
+
+.linea{
+    border-bottom:solid 1px #fff;
+}
+
+.android {
+    width: 150px;
+}
+
+.apple {
+    width: 164px;
+    height: 40px;
+}
+
+/* Ajustes para pantallas pequeñas a partir de 590px */
+@media (max-width: 980px) {
+    .text-section, .image-section {
+        flex: 1 1 100%;  /* En pantallas pequeñas, se ajusta al 100% del contenedor */
+        max-width: 100%;
+    }
+    .image-section {
+        order: -1;  /* Imagen debajo del texto */
+    }
+    .content {
+        flex-direction: column;  /* Contenedor en columnas para mejor distribución */
+    }
+    .text-section h1 {
+        font-size: 1.5rem;  /* Ajuste de fuente para pantallas pequeñas */
+    }
+    .text-section p {
+        font-size: 1rem;  /* Ajuste de fuente para pantallas pequeñas */
+    }
+}
+
+/* HEADER */
+@media (max-width: 768px) {
+    header .navbar .navbar-brand {
+        font-size: 1.8rem;  /* Ajuste del tamaño del logo */
+        margin-left: 0;  /* Remover margen izquierdo en móviles */
+    }
+
+    header .navbar-nav .nav-item .nav-link {
+        margin: 0 10px;  /* Reducir espacio entre enlaces en móviles */
+        font-size: 0.9rem;  /* Reducir tamaño de fuente */
+    }
+
+    .header .iconos i {
+        font-size: 18px;  /* Reducción del tamaño de los íconos */
+    }
+}
+
+
+/* Very small screens (mobile devices) */
+@media (max-width: 576px) {
+
+    .primera-parte .logo {
+        font-size: 1rem;
+    }
+  
+    .redes-sociales i {
+        font-size: 1rem;
+        margin-right: 5px;
+    }
+  
+    .descargar img {
+        width: 90px;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .primera-parte {
+        flex-wrap: wrap;
+    }
+
+    .primera-parte .logo {
+        margin-bottom: 15px;
+    }
+    
+    .redes-sociales {
+        margin-bottom: 15px;
+    }
+    
+    .descargar {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .descargar img {
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 10px;
+    }
+    
+    .primera-parte p {
+        text-align: center;
+    }
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 460px) {   
+
+    footer .redes-sociales i{
+        font-size: 0.7rem !important;
+    }
+
+    .descargar img {
+        position: relative;
+        top: 9px;
+        
+    }
+
+    footer .android{
+        width: 75px !important;
+    }
+
+    footer .apple{
+        top: -4.5px !important;
+        width: 60px !important;      
+    }
+
+    .copyright{
+        font-size: 0.6rem !important;
+    }
+}
+
+/* Tablet Styles (768px) */
+@media (max-width: 768px) {
+    /* Navbar */
+    header .navbar .navbar-nav .nav-item {
+        margin-left: 15px; 
+    }
+
+    .primera-parte .logo{
+        display: none; /* Oculta el logo en tabletas y resoluciones menores */
+    }
+    
+     /* Ocultar texto de descarga en móviles */
+    .primera-parte p {
+    display: none;
+    }
+    
+    /* Ocultar enlaces de políticas y términos */
+    .segunda-parte .row a {
+    display: none;
+    }
+    
+    /* Ajustar tamaño de elementos */
+    .primera-parte .logo {
+    font-size: 1.2rem; /* Reducir logo */
+    }
+    
+  
+    .redes-sociales {
+    margin-bottom: 15px;
+    }
+    
+    .descargar {
+    justify-content: center;
+    flex-wrap: wrap;
+    }
+    
+    .descargar img {
+    width: 100px;
+    }
+
+    .android { 
+        width: 100px !important; 
+    } 
+    
+    .apple{
+        position: relative;
+        bottom: 9px;
+        width: 80px !important;
+    }
+    
+    .redes-sociales i {
+        font-size: 1rem !important; /* Reducir iconos aún más */
+    }
+}
